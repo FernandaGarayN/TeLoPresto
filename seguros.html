@@ -69,6 +69,87 @@
                         <input type="text" class="form-control" id="apellido" name="apellido" required>
                     </div>
                 </div>
+                <div class="container my-5">
+                    <h1 class="text-center mb-5">Reserva de Automóvil</h1>
+                    <form>
+                        <!-- Datos del cliente -->
+                        <div class="mb-3 row">
+                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="apellido" name="apellido" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                            </div>
+                        </div>
+                        <!-- InformaciÃ³n del vehÃ­culo -->
+                        <div class="mb-3 row">
+                            <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
+                            <div class="col-sm-10">
+                                <select class="form-select" id="vehiculo" name="vehiculo">
+                                    <option value="sedan">Sedán</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="camioneta">Camioneta</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="fechafin" class="col-sm-2 col-form-label">Fecha de fin</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="fechafin" name="fechafin" required>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="offset-sm-2 col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gps" name="gps">
+                                    <label class="form-check-label" for="gps">
+                                        GPS
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="silla" name="silla">
+                                    <label class="form-check-label" for="silla">
+                                        Silla de bebé
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="seguro" name="seguro">
+                                    <label class="form-check-label" for="seguro">
+                                        Seguro adicional
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="mb-3 row">
+                            <div class="col-sm-12 text-center">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmarModal">Reservar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
         <section id ="conteiner">
             <article class = "article">
                 <h2>
