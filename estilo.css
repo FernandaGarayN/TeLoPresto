@@ -5,6 +5,15 @@
         background-size: cover;
     }
     
+    /* Estilo para la cabecera de la página principal */
+    .cabecera {
+        background-color: whitesmoke;
+    }
+
+    .cabecera h1 {
+        color:black;
+    }
+
     /* Estilo para el contenedor del formulario */
     .container {
         margin-top: 100px;
