@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Agrega tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-YoJw8UATPp+6XGrugZlfYX6cNUJx/BxOKqa1PY27vGJegcqC8jJePxmSZf+Mww3J9D2W8mSvS0wiyOebOx1eZA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mantenedor de vehiculos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">Reserva de Automóvil</h1>
+        <form>
+            <!-- Datos del cliente -->
+            <div class="mb-3 row">
+                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="apellido" name="apellido" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+            </div>
+            <!-- InformaciÃ³n del vehÃ­culo -->
+            <div class="mb-3 row">
+                <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="vehiculo" name="vehiculo">
+                        <option value="sedan">Sedán</option>
+                        <option value="suv">SUV</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="fechafin" class="col-sm-2 col-form-label">Fecha de fin</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="fechafin" name="fechafin" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="offset-sm-2 col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gps" name="gps">
+                        <label class="form-check-label" for="gps">
+                            GPS
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="silla" name="silla">
+                        <label class="form-check-label" for="silla">
+                            Silla de bebé
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="seguro" name="seguro">
+                        <label class="form-check-label" for="seguro">
+                            Seguro adicional
+                        </label>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mb-3 row">
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmarModal">Reservar</button>
+                </div>
+            </div>
+      </form>
+    </div>
+</body>
+</html>
