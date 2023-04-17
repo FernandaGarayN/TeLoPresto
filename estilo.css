@@ -43,3 +43,13 @@
         background-color: #0062cc;
         border-color: #005cbf;
     }
+.contenedor_contenido{
+    display: flex;
+    flex-direction: row;
+}
+.c_seguros{
+    margin: 2rem 1rem 2rem 2rem;
+}
+.c_barraL{
+    margin: 2rem 2rem 1rem 2rem;
+}
