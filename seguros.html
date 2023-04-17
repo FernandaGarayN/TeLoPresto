@@ -1,189 +1,184 @@
-<!DOCTYPE html> 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Rent a Car - Tu mejor opción para rentar autos</title>
-        <!-- Agrega los enlaces para cargar Bootstrap -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- Agrega tu archivo CSS personalizado -->
-        <link rel="stylesheet" href="estilo.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            integrity="sha512-YoJw8UATPp+6XGrugZlfYX6cNUJx/BxOKqa1PY27vGJegcqC8jJePxmSZf+Mww3J9D2W8mSvS0wiyOebOx1eZA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    </head>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguros Asociados</title>
-    <link rel="stylesheet" href="estilo.css"/>
+    <title>Rent a Car - Tu mejor opción para rentar autos</title>
+    <!-- Agrega los enlaces para cargar Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Agrega tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="estilo.css">
 </head>
 
-    
-    <div id= "container">
-        <header>
-           <h1>Seguros Asociados</h1>  
-        </header>
+<body>
 
-        <nav>
-            <ul>
-                <a href= principal.html>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mantenedor de vehiculos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-                    </a>
-                
-            </ul>
-
-        </nav>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">Rent a Car</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="servicios.html">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Vehiculos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mantenedor de vehiculos</a>
-                        </li>
-                    </ul>
+    <div class="container">
+        <h1>Seguros Asociados</h1>
+        <form>
+            <div class="mb-3 row">
+                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
                 </div>
             </div>
-        </nav>
-                        <div class="mb-3 row">
-                            <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="apellido" name="apellido" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="email" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
-                            <div class="col-sm-10">
-                                <input type="tel" class="form-control" id="telefono" name="telefono" required>
-                            </div>
-                        </div>
-                        <!-- InformaciÃ³n del vehÃ­culo -->
-                        <div class="mb-3 row">
-                            <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
-                            <div class="col-sm-10">
-                                <select class="form-select" id="vehiculo" name="vehiculo">
-                                    <option value="sedan">Sedán</option>
-                                    <option value="suv">SUV</option>
-                                    <option value="camioneta">Camioneta</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="fechasiniestro" class="col-sm-2 col-form-label">Fecha de siniestro</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="fechasiniestro" name="fechasiniestro" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="Fecharecepcionvehi" class="col-sm-2 col-form-label">Fecha de recepcion vehiculo</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="Fecharecepcionvehi" name="Fecharecepcionvehi" required>
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <div class="offset-sm-2 col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="Alcoholemia" name="Alcoholemia">
-                                    <label class="form-check-label" for="Alcoholemia">
-                                        Alcoholemia
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="toma de datos tercero" name="toma de datos tercero">
-                                    <label class="form-check-label" for="toma de datos tercero">
-                                        toma de datos tercero
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="seguro" name="seguro">
-                                    <label class="form-check-label" for="seguro">
-                                        Seguro adicional
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="mb-3 row">
-                            <div class="col-sm-12 text-center">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmarModal">Ingresar</button>
-                            </div>
-                        </div>
-                    </form>
+            <div class="mb-3 row">
+                <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="apellido" name="apellido" required>
                 </div>
-        <section id ="conteiner">
-            <article class = "article"class="col-sm-12 text-center">
-                <h2>
-                    Tomar los datos del tercero
-                </h2>
-                <p>
-                    En caso de que haya un tercero involucrado en el accidente, es imprescindible anotar a lo menos la patente del vehículo. En lo posible, también anotar el nombre, RUT, teléfono y Compañía de Seguros del tercero afectado.</p>
-            </article>
-            <article class = "article"class="col-sm-12 text-center">
-                <h2>
-                    Denuncia en caso de haber lesionados
-                </h2>
-                <p>
-                    texto del seguro complementario
-                </p>
-            </article>   <article class = "article">
-                <h2>
-                    Alcoholemia
-                </h2>
-                <p>
-                    En caso que haya personas lesionadas producto del accidente, sean ocupantes del vehículo o terceros, deberá realizar inmediatamente una denuncia con un funcionario de Carabineros o en la Comisaría más cercana. Si no hay lesionados no es necesario concurrir a Carabineros.
-                </p>
-            </article>   <article class = "article">
-                <h2>
-                    Avisar a nuestra oficina dentro de 24 horas y realizar Declaración Jurada
-                </h2>
-                <p>
-                    Es obligatorio dar aviso a nuestras oficinas dentro de un plazo de 24 horas desde ocurrido el siniestro. El arrendatario tiene 2 opciones para realizar la declaración y aportar los datos del tercero involucrado:
-                    Vía telefónica al número 22 963 8760 y acudir antes de las 24 horas a alguna de nuestras oficinas para completar los formularios.
-                    Descargando y completando los formularios en este sitio y enviarlos al correo siniestros@chileanrentacar.cl
-                </p>                  
-            </article>
-        </section>
-        <aside>
-            <h2>barra lateral</h2>
-            <form >
-                <input type="text">
-                <input type="submit"value="Buscar"/>
-            </form>    
-        </aside>
-        <footer>
-            seguros complementarios web &copy; 2023
-        </footer>
+            </div>
+            <div class="mb-3 row">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="telefono" class="col-sm-2 col-form-label">Teléfono</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="telefono" name="telefono" required>
+                </div>
+            </div>
+            <!-- InformaciÃ³n del vehÃ­culo -->
+            <div class="mb-3 row">
+                <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="vehiculo" name="vehiculo">
+                        <option value="sedan">Sedán</option>
+                        <option value="suv">SUV</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="fechasiniestro" class="col-sm-2 col-form-label">Fecha de siniestro</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="fechasiniestro" name="fechasiniestro" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="Fecharecepcionvehi" class="col-sm-2 col-form-label">Fecha de recepcion vehiculo</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="Fecharecepcionvehi" name="Fecharecepcionvehi" required>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="offset-sm-2 col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="Alcoholemia" name="Alcoholemia">
+                        <label class="form-check-label" for="Alcoholemia">
+                            Alcoholemia
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="toma de datos tercero"
+                            name="toma de datos tercero">
+                        <label class="form-check-label" for="toma de datos tercero">
+                            toma de datos tercero
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="seguro" name="seguro">
+                        <label class="form-check-label" for="seguro">
+                            Seguro adicional
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#confirmarModal">Ingresar</button>
+                </div>
+            </div>
+        </form>
     </div>
+    <section id="conteiner">
+        <article class="article" class="col-sm-12 text-center">
+            <h2>
+                Tomar los datos del tercero
+            </h2>
+            <p>
+                En caso de que haya un tercero involucrado en el accidente, es imprescindible anotar a lo menos la
+                patente
+                del vehículo. En lo posible, también anotar el nombre, RUT, teléfono y Compañía de Seguros del tercero
+                afectado.</p>
+        </article>
+        <article class="article" class="col-sm-12 text-center">
+            <h2>
+                Denuncia en caso de haber lesionados
+            </h2>
+            <p>
+                texto del seguro complementario
+            </p>
+        </article>
+        <article class="article">
+            <h2>
+                Alcoholemia
+            </h2>
+            <p>
+                En caso que haya personas lesionadas producto del accidente, sean ocupantes del vehículo o terceros,
+                deberá
+                realizar inmediatamente una denuncia con un funcionario de Carabineros o en la Comisaría más cercana. Si
+                no
+                hay lesionados no es necesario concurrir a Carabineros.
+            </p>
+        </article>
+        <article class="article">
+            <h2>
+                Avisar a nuestra oficina dentro de 24 horas y realizar Declaración Jurada
+            </h2>
+            <p>
+                Es obligatorio dar aviso a nuestras oficinas dentro de un plazo de 24 horas desde ocurrido el siniestro.
+                El
+                arrendatario tiene 2 opciones para realizar la declaración y aportar los datos del tercero involucrado:
+                Vía telefónica al número 22 963 8760 y acudir antes de las 24 horas a alguna de nuestras oficinas para
+                completar los formularios.
+                Descargando y completando los formularios en este sitio y enviarlos al correo
+                siniestros@chileanrentacar.cl
+            </p>
+        </article>
+    </section>
+    <aside>
+        <h2>barra lateral</h2>
+        <form>
+            <input type="text">
+            <input type="submit" value="Buscar" />
+        </form>
+    </aside>
+    <footer>
+        seguros complementarios web &copy; 2023
+    </footer>
 </body>
+
 </html>

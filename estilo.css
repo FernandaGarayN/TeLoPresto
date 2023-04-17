@@ -4,16 +4,12 @@
         background-image: url("imagenes/Autoruta.jpg");
         background-size: cover;
     }
-    
-    /* Estilo para el contenedor del formulario */
-    .container {
-        margin-top: 100px;
-    }
+
     
     /* Estilo para el título del formulario */
     h1 {
         text-align: center;
-        color: # black;
+        color: black;
     }
     
     /* Estilo para los campos del formulario */
