@@ -53,3 +53,21 @@
 .c_barraL{
     margin: 2rem 2rem 1rem 2rem;
 }
+
+.mitabla {
+  border-collapse: collapse;
+  border: 3px solid black; /* Borde para la tabla */
+  
+}
+
+th, td {
+  border: 1px solid grey; /* Borde para las celdas de encabezado y datos */
+  padding: 8px;
+  background-color: lightgray;
+}
+.btnDel{
+    float: right;
+  }
+.btnEdit{
+    float: right;
+  }

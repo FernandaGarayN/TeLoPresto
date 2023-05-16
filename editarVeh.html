@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    
+    integrity="sha512-YoJw8UATPp+6XGrugZlfYX6cNUJx/BxOKqa1PY27vGJegcqC8jJePxmSZf+Mww3J9D2W8mSvS0wiyOebOx1eZA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <H1>SELECCIONA UN VEHICULO DE LA LISTA</H1>
+    <table id="mitabla" align="center">
+        <tr>
+            <th style="width: 120px;">MARCA</th><!---REEMPLAZA A UN TD PERO LO HACE EN NEGRITA PARA HACER LA CABECERA DE LA TABLA-->
+            <th style="width: 120px;">MODELO</th>
+            <th style="width: 120px;">PATENTE</th>
+            <th style="width: 120px;">TIPO VEHICULO</th>
+            <th style="width: 120px;">KILOMETRAJE</th>
+            <th style="width: 120px;">COLOR</th>
+            <th style="width: 120px;">AÑO</th>
+            
+        </tr>
+        <tr>
+            <td>Ford</td>
+            <td>Focus</td>
+            <td>AAD965</td>
+            <td>Sedan</td>
+            <td>0</td>
+            <td>Plata</td>
+            <td>2021</td>
+            <td><input type="checkbox"></td>
+            
+        </tr>
+        <tr>
+            <td>Fiat</td>
+            <td>Palio</td>
+            <td>CTB993</td>
+            <td>Vintage</td>
+            <td>170000</td>
+            <td>Rojo</td>
+            <td>2004</td>
+            <td><input type="checkbox"></td>         
+        </tr>
+        <tr>
+            <td>VolksWagen</td>
+            <td>Golf</td>
+            <td>BBT372</td>
+            <td>Tuning</td>
+            <td>140000</td>
+            <td>Negro</td>
+            <td>2014</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Dodge</td>
+            <td>Ram</td>
+            <td>TIF949</td>
+            <td>Business</td>
+            <td>10000</td>
+            <td>Perla</td>
+            <td>2022</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>MG</td>
+            <td>III</td>
+            <td>AWF001</td>
+            <td>Sedan</td>
+            <td>125000</td>
+            <td>Amarillo</td>
+            <td>2014</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Toyota</td>
+            <td>Hilux</td>
+            <td>UBI485</td>
+            <td>Farmer</td>
+            <td>50000</td>
+            <td>Plomo</td>
+            <td>2018</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <td>Nissan</td>
+            <td>V Algo</td>
+            <td>OTI165</td>
+            <td>Classic</td>
+            <td>250000</td>
+            <td>Blanco</td>
+            <td>2001</td>
+            <td><input type="checkbox"></td>
+        </tr>
+        
+    </table>
+    <br>
+    <button id="btnDel" >EDITAR</button>     
+    <button id="btnEdit">ELIMINAR</button>
+        
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</body>
+</html>
