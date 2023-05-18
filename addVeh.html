@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crearVehiculo</title>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form id="formularioV"></form>
+        <div>
+            <label for="marca">MARCA: </label>
+            <input type="text" id="marca" name="marca">
+            <span id="msgmarca">Ingresa una marca válida</span>
+        </div>
+        <div>
+            <label for="modelo">MODELO: </label>
+            <input type="text" id="modelo" name="modelo">
+            <span id="msgmodelo">Ingresa un modelo válido</span>
+        </div>
+        <div>
+            <label for="patente">PATENTE: </label>
+            <input type="text" id="patente" name="patente">
+            <span id="msgpatente">Ingresa una patente válida</span>
+        </div>
+        <div>
+            <label for="tipo">TIPO DE VEHÍCULO: </label>
+            <select class="form-select" id="vehiculo" name="vehiculo">
+                <option value="tipods">Seleccione tipo</option>
+                <option value="sedan">Sedán</option>
+                <option value="suv">SUV</option>
+                <option value="camioneta">Camioneta</option>
+                <option value="camioneta">4x4</option>
+            </select>
+        </div>
+            <div>
+                <label for="km">KILOMETRAJE: </label>
+                <select class="form-select" id="km" name="km">
+                    <option value="0">Seleccione cantidad</option>
+                    <option value="1">0 - 50000 km</option>
+                    <option value="2">51000 - 100000 km</option>
+                    <option value="3">101000 - 150000 km</option>
+                    <option value="4">151000 - 200000 km</option>
+                </select>
+            </div>
+            <div>
+            <label for="color">COLOR: </label>
+            <select class="form-select" id="color" name="color">
+                <option value="colors">Seleccione un color</option>
+                <option value="gris">Gris</option>
+                <option value="negro">Negro</option>
+                <option value="rojo">Rojo</option>
+                <option value="blanco">Blanco</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <label for="anio">AÑO DE FABRICACIÓN: </label>
+            <input type="date" class="form-control" id="fechafab" name="fechafab" required="">
+        </div>
+        <div class="col-sm-2">
+            <label for="fechaingreso">FECHA INGRESO: </label>
+            <input type="date" class="form-control" id="fechaingreso" name="fechaingreso" required="">
+        </div>
+        <br>
+        <input id="btnVeh" type="button" value="VALIDAR FORMULARIO" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="validaciones.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#btnVeh").click(valida)
+            $("#msgmarca").hide()
+            $("#msgmodelo").hide()
+            $("#msgpatente").hide()
+        })
+    </script>
+</body>
+</html>

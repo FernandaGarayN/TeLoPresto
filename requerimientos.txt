@@ -1,0 +1,20 @@
+REQUERIMIENTOS DEL CLIENTE
+1.	Sistema de reservas en línea: la página web debe permitir a los clientes
+     reservar vehículos en línea y recibir una confirmación inmediata. 
+2.	Catálogo de vehículos: la página debe tener una lista de los vehículos
+     disponibles para alquilar, incluyendo información como modelo, capacidad, precio y si está o no disponible.
+3.	Proceso de pago: la página deberá contar con un proceso de pago seguro que
+     proteja los datos de los clientes. 
+4.	Información sobre seguros: la pagina deberá proporcionar información sobre
+     las opciones de seguro y protección para los clientes que quieran alquilar un vehículo.
+5.	Información sobre requisitos: la pagina debe incluir información clara y concisa 
+    sobre los requisitos para poder arrendar, como la edad mínima, licencia de conducir válida y depósitos por seguridad. 
+6.	Reseñas y testimonios: la página debe incluir reseñas y comentarios de clientes anteriores.
+7.	Soporte: la página deberá ofrecer un sistema de soporte al cliente para resolver
+     cualquier problema que pueda llegarse a presentar. 
+8.	Filtrado de información: la página deberá contar con opciones de filtrado para reducir
+     las opciones de vehículos y poder cumplir requisitos específicos.
+9.	Información sobre lugares de entrega: la página web deberá dar información detallada
+     sobre ubicaciones para recoger o devolver los vehículos.
+10.	Mantenibilidad: la página deberá permitir al usuario crear, modificar,  eliminar
+     y mostrar información específica. 
