@@ -15,3 +15,7 @@ function valida(){
                 $("#msgmodelo").show()
             }
 }
+function confir(){
+    alert("Seguro deseas eliminar este vehículo?");
+    
+}
