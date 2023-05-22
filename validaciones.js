@@ -17,5 +17,6 @@ function valida(){
 }
 function confir(){
     alert("Seguro deseas eliminar este vehículo?");
-    
 }
+
+  
