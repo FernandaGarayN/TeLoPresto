@@ -18,3 +18,16 @@ REQUERIMIENTOS DEL CLIENTE
      sobre ubicaciones para recoger o devolver los vehículos.
 10.	Mantenibilidad: la página deberá permitir al usuario crear, modificar,  eliminar
      y mostrar información específica. 
+
+
+REQUERIMIENTOS SIMPLIFICADOS
+1.-  Reservas en línea: Permitir a los clientes reservar vehículos en línea con confirmación inmediata.
+2.-  Catálogo de vehículos: Mostrar una lista de vehículos disponibles para alquilar con información relevante.
+3.- *Proceso de pago seguro: Implementar un proceso de pago seguro para proteger los datos de los clientes.* DEMASIADO AMBICIOSO
+4.-  Información de seguros: Proporcionar detalles sobre las opciones de seguro y protección para los clientes.
+5.-  Requisitos de alquiler: Mostrar información clara y concisa sobre los requisitos de alquiler, como edad mínima, licencia de conducir y depósitos de seguridad.
+6.-  Reseñas y testimonios: Incluir reseñas y comentarios de clientes anteriores.
+7.-  Soporte al cliente: Ofrecer un sistema de soporte para resolver problemas y atender consultas de los clientes.
+8.-  Filtrado de información: Permitir opciones de filtrado para reducir las opciones de vehículos y cumplir requisitos específicos.
+9.-  Información de lugares de entrega: Proporcionar detalles sobre las ubicaciones para recoger o devolver los vehículos.
+10.- Mantenibilidad: Permitir a los usuarios crear, modificar, eliminar y mostrar información específica.
