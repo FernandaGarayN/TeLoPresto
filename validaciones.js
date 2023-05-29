@@ -19,4 +19,19 @@ function confir(){
     alert("Seguro deseas eliminar este vehículo?");
 }
 
-  
+function validarLogin(){
+    var email = $("#email").val()
+    var password = $("#password").val()
+
+    if(email == null || email.length == 0){
+        alert("Debe ingresar un email")
+        return false;
+    }
+
+    if(password == null || password.length == 0){
+        alert("Debe ingresar un password")
+        return false;
+    }
+
+    return true;
+}
