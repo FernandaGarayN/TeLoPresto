@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-        <div class="container">
+        <div class="container my-5">
             <div class="row justify-content-center">
-                <div class="col-md-6">
+                <div class="col-md-6 bg-white bg-opacity-50">
                     <h1>Iniciar sesión</h1>
                     <form method="GET" action="principal.html">
                         <div class="form-group">
@@ -23,8 +23,22 @@
                         </div>
                         <button id="btnsubmit" type="submit" class="btn btn-primary">Iniciar sesión</button>
                     </form>
+                    
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 bg-white bg-opacity-50">
+                    <footer class="mt-5">
+                        <p>&copy; Información adicional</p>
+                        <ul>
+                          
+                          <li><a href="requisitos.html">Requisitos para arrendar</a></li>
+                          <li><a href="contacto.html">Contacto</a></li>
+                          <li><a href="/rrss">Redes Sociales</a></li>
+                        </ul>
+                      </footer>
+                </div>
+            </div>            
         </div>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"
          integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -35,14 +49,6 @@
                 $("#btnsubmit").click(validarLogin)
             })
         </script>
-            <footer>
-                <p>&copy; Información adicional</p>
-                <ul>
-                  
-                  <li><a href="requisitos.html">Requisitos para arrendar</a></li>
-                  <li><a href="contacto.html">Contacto</a></li>
-                  <li><a href="/rrss">Redes Sociales</a></li>
-                </ul>
-              </footer>
+            
 </body>
 </html>
