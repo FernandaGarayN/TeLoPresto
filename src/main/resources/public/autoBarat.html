@@ -46,54 +46,12 @@
     <br>
   
     <br>
-  <div class="card-group">
-    <div class="card">
-      <img class="card-img-top" src="imagenes/fami1.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">SUV</h5>
-        <p class="card-text">
-        <p>Marca: Chevrolet</p>
-        <p>Modelo: V34</p>
-        <p>Año: 2023</p>
-        <p>Color: Azul</p>
-        <p>Capacidad: 4 personas</p>
-        <p>Valor diario: 30.000</p>
-        <button id="btnarrendar"><a href="Reserva.html" target="btnarrendar">Arrendar</a></button>
-        
-        <p class="card-text"><small class="text-muted"></small></p>
-      </div>
+    <div class="container">
+        <div id="cars_cards" class="row">
+
+        </div>
+
     </div>
-    <div class="card">
-      <img class="card-img-top" src="imagenes/fami2.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">4x2</h5>
-        <p class="card-text">        
-        <p>Marca: Lego</p>
-        <p>Modelo: Praia</p>
-        <p>Año: 2012</p>
-        <p>Color: Rojo</p>
-        <p>Capacidad: 2 personas</p>
-        <p>Valor diario: 50.000</p>
-        <button id="btnarrendar"><a href="Reserva.html" target="btnarrendar">Arrendar</a></button>
-        <p class="card-text"><small class="text-muted"></small></p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="imagenes/fami3.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Camioneta</h5>
-        <p class="card-text">      
-        <p>Marca: Nissan</p>
-        <p>Modelo: Pathfinder</p>
-        <p>Año: 2018</p>
-        <p>Color: Gris</p>
-        <p>Capacidad: 10 personas</p>
-        <p>Valor diario: 60.000</p>
-        <button id="btnarrendar"><a href="Reserva.html" target="btnarrendar">Arrendar</a></button>
-        <p class="card-text"><small class="text-muted"></small></p>
-      </div>
-    </div>
-  </div>
   <footer>
     <p>&copy; Información adicional</p>
     <ul>
@@ -103,6 +61,36 @@
       <li><a href="/rrss">Redes Sociales</a></li>
     </ul>
   </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $.get('/cars', function(json){
+                $.each(json.cars, function(index, element){
+                    let card =  "<div class=\"col-md-4\">\n" +
+                        "<div class=\"card\">\n" +
+                        "      <img class=\"card-img-top\" src=\"imagenes/fami1.jpg\" alt=\"Card image cap\">\n" +
+                        "      <div class=\"card-body\">\n" +
+                        "        <h5 class=\"card-title\">SUV</h5>\n" +
+                        "        <p class=\"card-text\">\n" +
+                        "        <p>Marca: "+element.brand+"</p>\n" +
+                        "        <p>Modelo: "+element.model+"</p>\n" +
+                        "        <p>Año: "+element.year+"</p>\n" +
+                        "        <p>Color: "+element.color+"</p>\n" +
+                        "        <p>Capacidad: "+element.capacity+" personas</p>\n" +
+                        "        <p>Valor diario: $"+element.cost+"</p>\n" +
+                        "        <button id=\"btnarrendar\"><a href=\"Reserva.html\" target=\"btnarrendar\">Arrendar</a></button>\n" +
+                        "        \n" +
+                        "        <p class=\"card-text\"><small class=\"text-muted\"></small></p>\n" +
+                        "      </div>\n" +
+                        "    </div>" +
+                        "    </div>"
+                    $("#cars_cards").append(card)
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>

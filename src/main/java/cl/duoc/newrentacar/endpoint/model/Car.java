@@ -12,4 +12,7 @@ public class Car {
     private String brand;
     private String model;
     private String color;
+    private Integer year;
+    private Integer capacity;
+    private Integer cost;
 }

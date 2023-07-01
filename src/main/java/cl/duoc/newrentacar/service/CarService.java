@@ -27,6 +27,9 @@ public class CarService {
             car.setBrand(entity.getBrand());
             car.setModel(entity.getModel());
             car.setColor(entity.getColor());
+            car.setYear(entity.getYear());
+            car.setCapacity(entity.getCapacity());
+            car.setCost(entity.getDailyCost());
             finalCars.add(car);
         }
         return finalCars;

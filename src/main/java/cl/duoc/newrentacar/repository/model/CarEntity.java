@@ -25,4 +25,10 @@ public class CarEntity {
     private String model;
     @Column(nullable = false, length = 10)
     private String color;
+    @Column (name = "factory_year",nullable = false, length = 4)
+    private Integer year;
+    @Column (nullable = false, length = 2)
+    private Integer capacity;
+    @Column (nullable = false, length = 6)
+    private Integer dailyCost;
 }
