@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:rentacar;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    generate-unique-name: false
+  h2:
+    console:
+      enabled: true
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+          auto: create-drop
+          import_files: sql_imports/cars.sql
+        dialect: org.hibernate.dialect.H2Dialect
+        show_sql: true
+  sql:
+    init:
+      mode: always
