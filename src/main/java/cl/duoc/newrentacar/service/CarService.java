@@ -29,6 +29,7 @@ public class CarService {
             car.setYear(entity.getYear());
             car.setCapacity(entity.getCapacity());
             car.setCost(entity.getDailyCost());
+            car.setType(entity.getType());
             finalCars.add(car);
         }
         return finalCars;
