@@ -31,4 +31,6 @@ public class CarEntity {
     private Integer capacity;
     @Column (nullable = false, length = 6)
     private Integer dailyCost;
+    @Column (nullable = false, length = 30)
+    private String type;
 }

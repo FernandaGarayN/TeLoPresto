@@ -15,4 +15,5 @@ public class Car {
     private Integer year;
     private Integer capacity;
     private Integer cost;
+    private String type;
 }
