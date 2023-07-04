@@ -70,8 +70,8 @@
                 </select>
             </div>
             <div class="col-sm-2">
-                <label for="fechafab"  class="col-form-label">AÑO DE FABRICACIÓN: </label>
-                <input type="date" class="form-control" id="fechafab" name="fechafab" required="">
+                <label for="anio"  class="col-form-label">AÑO DE FABRICACIÓN: </label>
+                <input type="number" class="form-control" id="anio" name="anio" required="">
             </div>
             <div>
                 <label for="capacidad"  class="col-form-label">CAPACIDAD: </label>
@@ -80,6 +80,19 @@
                     <option value="2">2</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div>
+                <label for="tipo"  class="col-form-label">TIPO: </label>
+                <select class="form-select" id="tipo" name="tipo">
+                    <option value="tipo">tipo de vehiculo</option>
+                    <option value="sedan">sedan</option>
+                    <option value="suv">suv</option>
+                    <option value="camioneta">camioneta</option>
+                    <option value="coupe">coupe</option>
+                    <option value="citycar">citycar</option>
+                    <option value="hatchbacks">hatchbacks</option>
                 </select>
             </div>
             <div>
@@ -98,11 +111,18 @@
     <script src="validaciones.js"></script>
     <script>
         $(document).ready(function(){
-            
-            $("#btnVeh").click(valida)
+            let settings = {}
+            settings.headers = {
+                "Accept":"application/json",
+                "Content-Type": "application/json"
+            }
+            $.ajaxSetup(settings)
+
+            $("#btnVeh").click(guardar)
             $("#msgmarca").hide()
             $("#msgmodelo").hide()
             $("#msgpatente").hide()
+            $("#msgvalor").hide()
         })
     </script>
         <footer>
