@@ -29,6 +29,41 @@ function guardar() {
     }
 }
 
+function editar(id) {
+    if (valida()) {
+        $("#msgmarca").hide()
+        $("#msgmodelo").hide()
+        $("#msgpatente").hide()
+        $("#msgvalor").hide()
+
+        let formData = {}
+        formData.brand = $("#marca").val()
+        formData.model = $("#modelo").val()
+        formData.plateCode = $("#patente").val()
+        formData.color = $("#color").val()
+        formData.year = $("#anio").val()
+        formData.capacity = $("#capacidad").val()
+        formData.type = $("#tipo").val()
+        formData.cost = $("#valor").val()
+
+        let data = JSON.stringify(formData)
+
+        console.log("data: " + data)
+
+        let ajaxSettings = {}
+        ajaxSettings.url = "/cars/"+id
+        ajaxSettings.type = "PUT"
+        ajaxSettings.data = data
+        ajaxSettings.dataType = "json"
+        ajaxSettings.success = function (data, status){
+            alert(status)
+            window.location = "/autoBarat.html"
+        }
+
+        $.ajax(ajaxSettings)
+    }
+}
+
 function valida() {
     var formularioOk = true
 

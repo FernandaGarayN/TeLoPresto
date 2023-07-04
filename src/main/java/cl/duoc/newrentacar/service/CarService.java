@@ -46,6 +46,10 @@ public class CarService {
             car.setBrand(dbCar.getBrand());
             car.setModel(dbCar.getModel());
             car.setColor(dbCar.getColor());
+            car.setYear(dbCar.getYear());
+            car.setCapacity(dbCar.getCapacity());
+            car.setCost(dbCar.getDailyCost());
+            car.setType(dbCar.getType());
             return car;
         }
         return null;
@@ -62,6 +66,10 @@ public class CarService {
             car.setBrand(dbCar.getBrand());
             car.setModel(dbCar.getModel());
             car.setColor(dbCar.getColor());
+            car.setYear(dbCar.getYear());
+            car.setCapacity(dbCar.getCapacity());
+            car.setCost(dbCar.getDailyCost());
+            car.setType(dbCar.getType());
             carRepository.delete(dbCar);
             return car;
         }
@@ -91,6 +99,10 @@ public class CarService {
             car.setColor(aCar.getColor());
             car.setModel(aCar.getModel());
             car.setPlateCode(aCar.getPlateCode());
+            car.setYear(aCar.getYear());
+            car.setCapacity(aCar.getCapacity());
+            car.setDailyCost(aCar.getCost());
+            car.setType(aCar.getType());
             carRepository.save(car);
             return aCar;
         }
