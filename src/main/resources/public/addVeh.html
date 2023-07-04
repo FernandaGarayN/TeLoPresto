@@ -118,7 +118,27 @@
             }
             $.ajaxSetup(settings)
 
-            $("#btnVeh").click(guardar)
+            const urlParams = new URLSearchParams(window.location.search)
+            const id = urlParams.get("id")
+
+            if(id) {
+                $.get("/cars/"+id, function (json) {
+                    $("#marca").val(json.car.brand)
+                    $("#modelo").val(json.car.model)
+                    $("#patente").val(json.car.plateCode)
+                    $("#color").val(json.car.color)
+                    $("#anio").val(json.car.year)
+                    $("#capacidad").val(json.car.capacity)
+                    $("#tipo").val(json.car.type)
+                    $("#valor").val(json.car.cost)
+                    $("#btnVeh").click(function (){
+                        editar(json.car.id)
+                    })
+                })
+            } else {
+                $("#btnVeh").click(guardar)
+            }
+
             $("#msgmarca").hide()
             $("#msgmodelo").hide()
             $("#msgpatente").hide()
