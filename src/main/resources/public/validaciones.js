@@ -1,41 +1,76 @@
-function valida(){
+function guardar() {
+    if (valida()) {
+        $("#msgmarca").hide()
+        $("#msgmodelo").hide()
+        $("#msgpatente").hide()
+        $("#msgvalor").hide()
+
+        let formData = {}
+        formData.brand = $("#marca").val()
+        formData.model = $("#modelo").val()
+        formData.plateCode = $("#patente").val()
+        formData.color = $("#color").val()
+        formData.year = $("#anio").val()
+        formData.capacity = $("#capacidad").val()
+        formData.type = $("#tipo").val()
+        formData.cost = $("#valor").val()
+
+        let data = JSON.stringify(formData)
+
+        console.log("data: " + data)
+
+        $.post(
+            "/cars"
+            , data
+            , function (data, status) {
+                alert(status)
+                window.location = "/autoBarat.html"
+            })
+    }
+}
+
+function valida() {
     var formularioOk = true
 
     var marca = $("#marca").val()
     var largoMarca = marca.length
-        if(largoMarca < 4 || largoMarca > 10){
-            formularioOk = false
-            $("#msgmarca").show()
-        }
+    if (largoMarca < 4 || largoMarca > 10) {
+        formularioOk = false
+        $("#msgmarca").show()
+    }
 
-        var modelo = $("#modelo").val()
-        var largoModelo = modelo.length
-            if(largoModelo < 4 || largoModelo > 10){
-                formularioOk = false
-                $("#msgmodelo").show()
-            }
+    var modelo = $("#modelo").val()
+    var largoModelo = modelo.length
+    if (largoModelo < 4 || largoModelo > 10) {
+        formularioOk = false
+        $("#msgmodelo").show()
+    }
+
+    return formularioOk
 }
-function confir(){
+
+function confir() {
     alert("Seguro deseas eliminar este vehículo?");
 }
 
-function validarLogin(){
+function validarLogin() {
     var email = $("#email").val()
     var password = $("#password").val()
 
-    if(email == null || email.length == 0){
+    if (email == null || email.length == 0) {
         alert("Debe ingresar un email")
         return false;
     }
 
-    if(password == null || password.length == 0){
+    if (password == null || password.length == 0) {
         alert("Debe ingresar un password")
         return false;
     }
 
     return true;
 }
-function validarReserva (){
+
+function validarReserva() {
     var nombre = $("#nombre").val()
     var apellido = $("#apellido").val()
     var email = $("#email").val()
@@ -47,40 +82,40 @@ function validarReserva (){
     var silla = $("#silla").val()
     var seguro = $("#seguro").val()
 
-    if(email == null || email.length == 0){
+    if (email == null || email.length == 0) {
         alert("Debe ingresar un email")
         $('#confirmarModal').modal('hide');
         return false;
     }
-    if(nombre == null || nombre.length == 0){
+    if (nombre == null || nombre.length == 0) {
         alert("Debe ingresar un nombre")
         return false;
     }
-    if(apellido == null || apellido.length == 0){
+    if (apellido == null || apellido.length == 0) {
         alert("Debe ingresar un apellido")
         return false;
     }
-     if(telefono == null || telefono.length == 0){
+    if (telefono == null || telefono.length == 0) {
         alert("Debe ingresar un telefono")
         return false;
-    } 
-    if(vehiculo == null || vehiculo.length == 0){
+    }
+    if (vehiculo == null || vehiculo.length == 0) {
         alert("Debe ingresar un vehiculo")
         return false;
-    } 
-    
-    if(fechainicio == null || fechainicio.length == 0){
+    }
+
+    if (fechainicio == null || fechainicio.length == 0) {
         alert("Debe ingresar un fechainicio")
         return false;
-    } 
-    
-    if(fechafin == null || fechafin.length == 0){
+    }
+
+    if (fechafin == null || fechafin.length == 0) {
         alert("Debe ingresar un fechafin")
         return false;
-    } 
-    
+    }
+
     $('#confirmarModal').modal('show');
-    return true 
+    return true
 }
 
 // Objeto para almacenar la información
@@ -88,24 +123,24 @@ var informacionEspecifica = [];
 
 // Función para crear nueva información
 function crearInformacion(nuevaInformacion) {
-  informacionEspecifica.push(nuevaInformacion);
+    informacionEspecifica.push(nuevaInformacion);
 }
 
 // Función para modificar información existente
 function modificarInformacion(indice, nuevaInformacion) {
-  informacionEspecifica[indice] = nuevaInformacion;
+    informacionEspecifica[indice] = nuevaInformacion;
 }
 
 // Función para eliminar información existente
 function eliminarInformacion(indice) {
-  informacionEspecifica.splice(indice, 1);
+    informacionEspecifica.splice(indice, 1);
 }
 
 // Función para mostrar la información
 function mostrarInformacion() {
-  informacionEspecifica.forEach((informacion, indice) => {
-    console.log(`Información ${indice + 1}: ${informacion}`);
-  });
+    informacionEspecifica.forEach((informacion, indice) => {
+        console.log(`Información ${indice + 1}: ${informacion}`);
+    });
 }
 
 // Ejemplo de uso
@@ -122,37 +157,37 @@ var informacionEspecifica = [];
 
 // Función para crear nueva información
 function crearInformacion(nuevaInformacion) {
-  informacionEspecifica.push(nuevaInformacion);
+    informacionEspecifica.push(nuevaInformacion);
 }
 
 // Función para modificar información existente
 function modificarInformacion(indice, nuevaInformacion) {
-  if (indice >= 0 && indice < informacionEspecifica.length) {
-    informacionEspecifica[indice] = nuevaInformacion;
-  } else {
-    console.log("Índice inválido. No se pudo modificar la información.");
-  }
+    if (indice >= 0 && indice < informacionEspecifica.length) {
+        informacionEspecifica[indice] = nuevaInformacion;
+    } else {
+        console.log("Índice inválido. No se pudo modificar la información.");
+    }
 }
 
 // Función para eliminar información existente
 function eliminarInformacion(indice) {
-  if (indice >= 0 && indice < informacionEspecifica.length) {
-    informacionEspecifica.splice(indice, 1);
-  } else {
-    console.log("Índice inválido. No se pudo eliminar la información.");
-  }
+    if (indice >= 0 && indice < informacionEspecifica.length) {
+        informacionEspecifica.splice(indice, 1);
+    } else {
+        console.log("Índice inválido. No se pudo eliminar la información.");
+    }
 }
 
 // Función para mostrar la información
 function mostrarInformacion() {
-  if (informacionEspecifica.length > 0) {
-    console.log("Información específica:");
-    informacionEspecifica.forEach((informacion, indice) => {
-      console.log(`Información ${indice + 1}: ${informacion}`);
-    });
-  } else {
-    console.log("No hay información específica para mostrar.");
-  }
+    if (informacionEspecifica.length > 0) {
+        console.log("Información específica:");
+        informacionEspecifica.forEach((informacion, indice) => {
+            console.log(`Información ${indice + 1}: ${informacion}`);
+        });
+    } else {
+        console.log("No hay información específica para mostrar.");
+    }
 }
 
 

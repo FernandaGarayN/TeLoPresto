@@ -74,6 +74,10 @@ public class CarService {
         newCar.setModel(aCar.getModel());
         newCar.setColor(aCar.getColor());
         newCar.setPlateCode(aCar.getPlateCode());
+        newCar.setType(aCar.getType());
+        newCar.setCapacity(aCar.getCapacity());
+        newCar.setYear(aCar.getYear());
+        newCar.setDailyCost(aCar.getCost());
         carRepository.save(newCar);
         return true;
     }
