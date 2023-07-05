@@ -240,7 +240,7 @@ function validarReserva() {
     $("#vehiculoReserva").append(vehiculo)
     $("#fechaInicioReserva").append(fechainicio)
     $("#fechaFinReserva").append(fechafin)
-    $("#nombreReserva").append(nombre + " " +apellido) 
+    $("#nombreReserva").append(nombre + " " +apellido)
     $("#telefonoReserva").append(telefono)
 
     $('#confirmarModal').modal('show');
