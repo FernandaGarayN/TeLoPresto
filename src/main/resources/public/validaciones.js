@@ -3,7 +3,12 @@ function guardar() {
         $("#msgmarca").hide()
         $("#msgmodelo").hide()
         $("#msgpatente").hide()
+        $("#msgcolor").hide()
+        $("#msganio").hide()
+        $("#msgtipo").hide()
+        $("#msgcapacidad").hide()
         $("#msgvalor").hide()
+
 
         let formData = {}
         formData.brand = $("#marca").val()
@@ -34,6 +39,10 @@ function editar(id) {
         $("#msgmarca").hide()
         $("#msgmodelo").hide()
         $("#msgpatente").hide()
+        $("#msgcolor").hide()
+        $("#msganio").hide()
+        $("#msgcapacidad").hide()
+        $("#msgtipo").hide()
         $("#msgvalor").hide()
 
         let formData = {}
@@ -79,6 +88,46 @@ function valida() {
     if (largoModelo < 4 || largoModelo > 10) {
         formularioOk = false
         $("#msgmodelo").show()
+    }
+
+    var patente = $("#patente").val()
+    let modeloPatente = /^[A-Z]{4}\d{2}$/
+    if (!modeloPatente.test(patente)){
+        formularioOk = false
+        $("#msgpatente").show()
+    }
+
+    var color = $("#color").val()
+    if (color == null ){
+        formularioOk = false
+        $("#msgcolor").show()
+    }
+
+    var anio = $("#anio").val()
+    if (anio == null ){
+        formularioOk = false
+        $("#msganio").show()
+    }
+
+
+    var capacidad = $("#capacidad").val()
+    if (capacidad == null ){
+        formularioOk = false
+        $("#msgcapacidad").show()
+    }
+
+
+    var tipo = $("#tipo").val()
+    if (tipo == null ){
+        formularioOk = false
+        $("#msgtipo").show()
+    }
+
+
+    var valorDia = $("#valor").val()
+    if (valorDia <= 0 ) {
+        formularioOk = false
+        $("#msgvalor").show()
     }
 
     return formularioOk
