@@ -3,11 +3,15 @@ function guardar() {
         $("#msgmarca").hide()
         $("#msgmodelo").hide()
         $("#msgpatente").hide()
-        $("#msgcolor").hide()
+        $("#msgvalor").hide()
+        $("#msgvalor2").hide()
+        $("#msgvalor3").hide()
         $("#msganio").hide()
+        $("#msganio2").hide()
+        $("#msganio3").hide()
+        $("#msgcolor").hide()
         $("#msgtipo").hide()
         $("#msgcapacidad").hide()
-        $("#msgvalor").hide()
 
 
         let formData = {}
@@ -39,11 +43,15 @@ function editar(id) {
         $("#msgmarca").hide()
         $("#msgmodelo").hide()
         $("#msgpatente").hide()
-        $("#msgcolor").hide()
-        $("#msganio").hide()
-        $("#msgcapacidad").hide()
-        $("#msgtipo").hide()
         $("#msgvalor").hide()
+        $("#msgvalor2").hide()
+        $("#msgvalor3").hide()
+        $("#msganio").hide()
+        $("#msganio2").hide()
+        $("#msganio3").hide()
+        $("#msgcolor").hide()
+        $("#msgtipo").hide()
+        $("#msgcapacidad").hide()
 
         let formData = {}
         formData.brand = $("#marca").val()
@@ -107,8 +115,17 @@ function valida() {
     if (anio == null ){
         formularioOk = false
         $("#msganio").show()
+    } else {
+        anio = parseInt(anio)
+        if (anio <2012){
+            formularioOk = false
+            $("#msganio2").show()
+        }
+        if (anio >2023){
+            formularioOk = false
+            $("#msganio3").show()
+        }
     }
-
 
     var capacidad = $("#capacidad").val()
     if (capacidad == null ){
@@ -125,9 +142,19 @@ function valida() {
 
 
     var valorDia = $("#valor").val()
-    if (valorDia <= 0 ) {
+    if (valorDia == null ) {
         formularioOk = false
         $("#msgvalor").show()
+    } else {
+        valorDia = parseInt(valorDia)
+        if (valorDia <= 0 ){
+            formularioOk = false
+            $("#msgvalor2").show()
+        }
+        if (valorDia > 300000){
+            formularioOk = false
+            $("#msgvalor3").show()
+        }
     }
 
     return formularioOk
