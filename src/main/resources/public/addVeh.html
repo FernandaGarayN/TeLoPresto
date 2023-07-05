@@ -75,6 +75,8 @@
                 <input type="number" class="form-control" id="anio" name="anio" required="">
             </div>
             <span id="msganio">Debes seleccionar un año</span>
+            <span id="msganio2">El año debe ser mayor que 2011</span>
+            <span id="msganio3">Aún no llegamos a ese año</span>
             <div>
                 <label for="capacidad"  class="col-form-label">CAPACIDAD: </label>
                 <select class="form-select" id="capacidad" name="capacidad">
@@ -101,8 +103,10 @@
             </div>
             <div>
                 <label for="valor"  class="col-form-label">VALOR DIARIO: </label>
-                <input type="text" id="valor" class="form-control" name="valor">
+                <input type="number" id="valor" class="form-control" name="valor">
                 <span id="msgvalor">Ingresa un precio válido</span>
+                <span id="msgvalor2">No damos autos gratis</span>
+                <span id="msgvalor3">Alto, tampoco es tan caro</span>
             </div>
 
             <br>
@@ -147,6 +151,14 @@
             $("#msgmodelo").hide()
             $("#msgpatente").hide()
             $("#msgvalor").hide()
+            $("#msgvalor2").hide()
+            $("#msgvalor3").hide()
+            $("#msganio").hide()
+            $("#msganio2").hide()
+            $("#msganio3").hide()
+            $("#msgcolor").hide()
+            $("#msgtipo").hide()
+            $("#msgcapacidad").hide()
         })
     </script>
         <footer>
