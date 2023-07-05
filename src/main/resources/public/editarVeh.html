@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,97 +15,97 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">Rent a Car</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="principal.html">Inicio <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="servicios.html">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="autoBarat.html">Vehiculos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pagos.html">Pagos</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal.html">Inicio <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="autoBarat.html">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagos.html">Pagos</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
-<H1>NUESTRA FLOTA DE VEHÍCULOS</H1>
-<table id="mitabla" align="center">
-    <tr>
-        <th style="width: 120px;">MARCA</th>
-        <!---REEMPLAZA A UN TD PERO LO HACE EN NEGRITA PARA HACER LA CABECERA DE LA TABLA-->
-        <th style="width: 120px;">MODELO</th>
-        <th style="width: 120px;">PATENTE</th>
-        <th style="width: 120px;">TIPO VEHICULO</th>
-        <th style="width: 120px;">CAPACIDAD</th>
-        <th style="width: 120px;">COLOR</th>
-        <th style="width: 120px;">AÑO</th>
-        <th style="width: 120px;">MODIFICAR</th>
-        <th style="width: 120px;">ELIMINAR</th>
-    </tr>
-</table>
+    </nav>
+    <H1>NUESTRA FLOTA DE VEHÍCULOS</H1>
+    <table id="mitabla" align="center">
+        <tr>
+            <th style="width: 120px;">MARCA</th>
+            <!---REEMPLAZA A UN TD PERO LO HACE EN NEGRITA PARA HACER LA CABECERA DE LA TABLA-->
+            <th style="width: 120px;">MODELO</th>
+            <th style="width: 120px;">PATENTE</th>
+            <th style="width: 120px;">TIPO VEHICULO</th>
+            <th style="width: 120px;">CAPACIDAD</th>
+            <th style="width: 120px;">COLOR</th>
+            <th style="width: 120px;">AÑO</th>
+            <th style="width: 120px;">MODIFICAR</th>
+            <th style="width: 120px;">ELIMINAR</th>
+        </tr>
+    </table>
 
-<footer>
-    <p>&copy; Información adicional</p>
-    <ul>
-        <li><a href="requisitos.html">Requisitos para arrendar</a></li>
-        <li><a href="/conectar">Contacto</a></li>
-        <li><a href="/rrss">Redes Sociales</a></li>
-    </ul>
-</footer>
+    <footer>
+        <p>&copy; Información adicional</p>
+        <ul>
+            <li><a href="requisitos.html">Requisitos para arrendar</a></li>
+            <li><a href="/conectar">Contacto</a></li>
+            <li><a href="/rrss">Redes Sociales</a></li>
+        </ul>
+    </footer>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $.get('/cars', function (json) {
-            $.each(json.cars, function (index, element) {
-                let idBtnDel = "btn_del" + element.id
-                let idRow = "row_" + element.id
-                let row = "\n" +
-                    "    <tr>\n" +
-                    "        <td>" + element.brand + "</td>\n" +
-                    "        <td>" + element.model + "</td>\n" +
-                    "        <td>" + element.plateCode + "</td>\n" +
-                    "        <td>" + element.type + "</td>\n" +
-                    "        <td>" + element.capacity + "</td>\n" +
-                    "        <td>" + element.color + "</td>\n" +
-                    "        <td>" + element.year + "</td>\n" +
-                    "        <td><a class='btn btn-success' href='/addVeh.html?id=" + element.id  + "'>Modificar</a></td>\n" +
-                    "        <td><a class='btn btn-danger' id='" + idBtnDel + "'>Eliminar</a></td>\n" +
-                    "    </tr>"
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $.get('/cars', function (json) {
+                $.each(json.cars, function (index, element) {
+                    let idBtnDel = "btn_del" + element.id
+                    let idRow = "row_" + element.id
+                    let row = "\n" +
+                        "    <tr>\n" +
+                        "        <td>" + element.brand + "</td>\n" +
+                        "        <td>" + element.model + "</td>\n" +
+                        "        <td>" + element.plateCode + "</td>\n" +
+                        "        <td>" + element.type + "</td>\n" +
+                        "        <td>" + element.capacity + "</td>\n" +
+                        "        <td>" + element.color + "</td>\n" +
+                        "        <td>" + element.year + "</td>\n" +
+                        "        <td><a class='btn btn-success' href='/addVeh.html?id=" + element.id  + "'>Modificar</a></td>\n" +
+                        "        <td><a class='btn btn-danger' id='" + idBtnDel + "'>Eliminar</a></td>\n" +
+                        "    </tr>"
 
-                $("#mitabla").append(row)
+                    $("#mitabla").append(row)
 
-                $("#" + idBtnDel).click(function () {
-                    $.ajax({
-                        url: '/cars/' + element.id,
-                        type: 'DELETE',
-                        success: function (response) {
-                            window.location = "/editarVeh.html"
-                        }
-                    });
+                    $("#" + idBtnDel).click(function () {
+                        $.ajax({
+                            url: '/cars/' + element.id,
+                            type: 'DELETE',
+                            success: function (response) {
+                                window.location = "/editarVeh.html"
+                            }
+                        });
+                    })
                 })
             })
         })
-    })
-</script>
+    </script>
 </body>
 </html>
