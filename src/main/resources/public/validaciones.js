@@ -177,8 +177,20 @@ function validarLogin() {
         alert("Debe ingresar un password")
         return false;
     }
+    let request={}
+    request.email=email
+    request.password=password
+    let data=JSON.stringify(request)
 
-    return true;
+    let jqxhr = $.post("/login", data)
+    jqxhr.done(function(){
+        window.location = "/principal.html"
+    })
+        .fail(function() {
+            alert( "Email o Contraseña no válida" );
+        })
+
+    return false;
 }
 
 function validarReserva() {

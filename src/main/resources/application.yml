@@ -14,7 +14,7 @@ spring:
         hbm2ddl:
           import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
           auto: create-drop
-          import_files: sql_imports/cars.sql
+          import_files: sql_imports/cars.sql,sql_imports/users.sql
         dialect: org.hibernate.dialect.H2Dialect
         show_sql: true
   sql:
