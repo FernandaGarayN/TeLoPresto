@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,111 +15,111 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rent a Car</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal.html">Inicio <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servicios.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="autoBarat.html">Vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pagos.html">Pagos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <br>
     <div class="container">
-        <a class="navbar-brand" href="#">Rent a Car</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="principal.html">Inicio <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="servicios.html">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="autoBarat.html">Vehiculos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contacto.html">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="mantenedor.html">Mantenedor de vehiculos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="pagos.html">Pagos</a>
-                </li>
-            </ul>
+        <div id="cars_cards" class="row">
         </div>
     </div>
-</nav>
-<br>
-
-<br>
-<div class="container">
-    <div id="cars_cards" class="row">
-    </div>
-</div>
 
 
-<H1>NUESTRA FLOTA DE VEHÍCULOS</H1>
-<table id="mitabla" align="center">
-    <tr>
-        <th style="width: 120px;">MARCA</th>
-        <!---REEMPLAZA A UN TD PERO LO HACE EN NEGRITA PARA HACER LA CABECERA DE LA TABLA-->
-        <th style="width: 120px;">MODELO</th>
-        <th style="width: 120px;">PATENTE</th>
-        <th style="width: 120px;">TIPO VEHICULO</th>
-        <th style="width: 120px;">CAPACIDAD</th>
-        <th style="width: 120px;">COLOR</th>
-        <th style="width: 120px;">AÑO</th>
-    </tr>
-</table>
-<br>
+    <H1>NUESTRA FLOTA DE VEHÍCULOS</H1>
+    <table id="mitabla" align="center">
+        <tr>
+            <th style="width: 120px;">MARCA</th>
+            <!---REEMPLAZA A UN TD PERO LO HACE EN NEGRITA PARA HACER LA CABECERA DE LA TABLA-->
+            <th style="width: 120px;">MODELO</th>
+            <th style="width: 120px;">PATENTE</th>
+            <th style="width: 120px;">TIPO VEHICULO</th>
+            <th style="width: 120px;">CAPACIDAD</th>
+            <th style="width: 120px;">COLOR</th>
+            <th style="width: 120px;">AÑO</th>
+        </tr>
+    </table>
+    <br>
+    <footer>
+        <p>&copy; Información adicional</p>
+        <ul>
 
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function () {
-        $.get('/cars', function (json) {
-            $.each(json.cars, function (index, element) {
-                let card = "<div class=\"col-md-4\">\n" +
-                    "<div class=\"card\">\n" +
-                    "      <img class=\"card-img-top\" src=\"imagenes/fami1.jpg\" alt=\"Card image cap\">\n" +
-                    "      <div class=\"card-body\">\n" +
-                    "        <h5 class=\"card-title\">" + element.type + "</h5>\n" +
-                    "        <p class=\"card-text\">\n" +
-                    "        <p>Marca: " + element.brand + "</p>\n" +
-                    "        <p>Modelo: " + element.model + "</p>\n" +
-                    "        <p>Año: " + element.year + "</p>\n" +
-                    "        <p>Color: " + element.color + "</p>\n" +
-                    "        <p>Capacidad: " + element.capacity + " personas</p>\n" +
-                    "        <p>Valor diario: $" + element.cost + "</p>\n" +
-                    "        <button id=\"btnarrendar\"><a href=\"Reserva.html\" target=\"btnarrendar\">Arrendar</a></button>\n" +
-                    "        \n" +
-                    "        <p class=\"card-text\"><small class=\"text-muted\"></small></p>\n" +
-                    "      </div>\n" +
-                    "    </div>" +
-                    "    </div>"
-                $("#cars_cards").append(card)
+            <li><a href="requisitos.html">Requisitos para arrendar</a></li>
+            <li><a href="/conectar">Contacto</a></li>
+            <li><a href="/rrss">Redes Sociales</a></li>
+        </ul>
+    </footer>
 
-                let row = "\n" +
-                    "    <tr>\n" +
-                    "        <td>" + element.brand + "</td>\n" +
-                    "        <td>" + element.model + "</td>\n" +
-                    "        <td>" + element.plateCode + "</td>\n" +
-                    "        <td>" + element.type + "</td>\n" +
-                    "        <td>" + element.capacity + "</td>\n" +
-                    "        <td>" + element.color + "</td>\n" +
-                    "        <td>" + element.year + "</td>\n" +
-                    "    </tr>"
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $.get('/cars', function (json) {
+                $.each(json.cars, function (index, element) {
+                    let card = "<div class=\"col-md-4\">\n" +
+                        "<div class=\"card\">\n" +
+                        "      <img class=\"card-img-top\" src=\"imagenes/fami1.jpg\" alt=\"Card image cap\">\n" +
+                        "      <div class=\"card-body\">\n" +
+                        "        <h5 class=\"card-title\">" + element.type + "</h5>\n" +
+                        "        <p class=\"card-text\">\n" +
+                        "        <p>Marca: " + element.brand + "</p>\n" +
+                        "        <p>Modelo: " + element.model + "</p>\n" +
+                        "        <p>Año: " + element.year + "</p>\n" +
+                        "        <p>Color: " + element.color + "</p>\n" +
+                        "        <p>Capacidad: " + element.capacity + " personas</p>\n" +
+                        "        <p>Valor diario: $" + element.cost + "</p>\n" +
+                        "        <button id=\"btnarrendar\"><a href=\"Reserva.html\" target=\"btnarrendar\">Arrendar</a></button>\n" +
+                        "        \n" +
+                        "        <p class=\"card-text\"><small class=\"text-muted\"></small></p>\n" +
+                        "      </div>\n" +
+                        "    </div>" +
+                        "    </div>"
+                    $("#cars_cards").append(card)
 
-                $("#mitabla").append(row)
+                    let row = "\n" +
+                        "    <tr>\n" +
+                        "        <td>" + element.brand + "</td>\n" +
+                        "        <td>" + element.model + "</td>\n" +
+                        "        <td>" + element.plateCode + "</td>\n" +
+                        "        <td>" + element.type + "</td>\n" +
+                        "        <td>" + element.capacity + "</td>\n" +
+                        "        <td>" + element.color + "</td>\n" +
+                        "        <td>" + element.year + "</td>\n" +
+                        "    </tr>"
+
+                    $("#mitabla").append(row)
+                })
             })
         })
-    })
-</script>
-<footer>
-    <p>&copy; Información adicional</p>
-    <ul>
-
-        <li><a href="requisitos.html">Requisitos para arrendar</a></li>
-        <li><a href="/conectar">Contacto</a></li>
-        <li><a href="/rrss">Redes Sociales</a></li>
-    </ul>
-</footer>
+    </script>
 </body>
 </html>
