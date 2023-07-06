@@ -237,6 +237,12 @@ function validarReserva() {
         return false;
     }
 
+    $("#vehiculoReserva").append(vehiculo)
+    $("#fechaInicioReserva").append(fechainicio)
+    $("#fechaFinReserva").append(fechafin)
+    $("#nombreReserva").append(nombre + " " +apellido) 
+    $("#telefonoReserva").append(telefono)
+
     $('#confirmarModal').modal('show');
     return true
 }
