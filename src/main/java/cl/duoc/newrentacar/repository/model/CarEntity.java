@@ -1,16 +1,11 @@
 package cl.duoc.newrentacar.repository.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name="cars")
+@Table(name = "cars")
 @Getter
 @Setter
 public class CarEntity {
@@ -25,12 +20,12 @@ public class CarEntity {
     private String model;
     @Column(nullable = false, length = 10)
     private String color;
-    @Column (name = "factory_year",nullable = false, length = 4)
+    @Column(name = "factory_year", nullable = false, length = 4)
     private Integer year;
-    @Column (nullable = false, length = 2)
+    @Column(nullable = false, length = 2)
     private Integer capacity;
-    @Column (nullable = false, length = 6)
+    @Column(nullable = false, length = 6)
     private Integer dailyCost;
-    @Column (nullable = false, length = 30)
+    @Column(nullable = false, length = 30)
     private String type;
 }
