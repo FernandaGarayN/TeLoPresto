@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>cl.duoc</groupId>
-	<artifactId>NewRentACar</artifactId>
+	<artifactId>API</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>NewRentACar</name>
-	<description>NewRentACar</description>
+	<name>te-lo-presto-api</name>
+	<description>te-lo-presto-api</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
