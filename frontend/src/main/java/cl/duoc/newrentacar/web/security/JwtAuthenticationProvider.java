@@ -1,14 +1,16 @@
 package cl.duoc.newrentacar.web.security;
 
 import cl.duoc.newrentacar.web.apiclients.AuthbootAuthRequest;
+import cl.duoc.newrentacar.web.apiclients.AuthbootAuthUser;
 import cl.duoc.newrentacar.web.services.AuthbootService;
+import java.util.Collection;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-
-import java.util.ArrayList;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 @RequiredArgsConstructor
 public class JwtAuthenticationProvider implements AuthenticationProvider {
@@ -19,8 +21,14 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
     var username = authentication.getName();
     var password = authentication.getCredentials().toString();
     var request = AuthbootAuthRequest.builder().username(username).password(password).build();
-    var login = authbootService.auth(request);
-    return new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>());
+    var response = authbootService.auth(request);
+    var user = response.getData();
+    return new UsernamePasswordAuthenticationToken(
+        user.getUsername(), user.getToken(), generateAuthorities(user));
+  }
+
+  private Collection<? extends GrantedAuthority> generateAuthorities(AuthbootAuthUser user) {
+    return user.getAuthorities().stream().map(SimpleGrantedAuthority::new).toList();
   }
 
   @Override

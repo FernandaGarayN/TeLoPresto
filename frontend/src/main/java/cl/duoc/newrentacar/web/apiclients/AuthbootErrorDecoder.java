@@ -17,7 +17,6 @@ public class AuthbootErrorDecoder implements ErrorDecoder {
       case 400 -> new AuthenticationServiceException("Error al autenticar.");
       case 401 -> new BadCredentialsException("Usuario o contraseña inválidos.");
       case 403 -> new AccountExpiredException("La cuenta está expirada.");
-        // Agrega más casos según necesites.
       default -> defaultErrorDecoder.decode(methodKey, response);
     };
   }

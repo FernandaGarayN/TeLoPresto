@@ -1,6 +1,5 @@
 package cl.duoc.newrentacar.web.config;
 
-import cl.duoc.newrentacar.web.apiclients.AuthbootClient;
 import cl.duoc.newrentacar.web.security.JwtAuthenticationProvider;
 import cl.duoc.newrentacar.web.services.AuthbootService;
 import lombok.RequiredArgsConstructor;
@@ -23,11 +22,16 @@ public class WebSecurityConfig {
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests(
-            (requests) ->
-                requests.requestMatchers("/", "/index", "/css/**", "/js/**", "/img/**", "/webjars/**")
+            requests ->
+                requests.requestMatchers("/", "/index", "/logout", "/css/**", "/js/**", "/img/**", "/webjars/**")
                         .permitAll().anyRequest().authenticated())
         .formLogin((form) -> form.loginPage("/login").permitAll())
-        .logout(LogoutConfigurer::permitAll);
+        .logout(logoutConfig -> {
+          logoutConfig.logoutUrl("/logout");
+          logoutConfig.logoutSuccessUrl("/index");
+          logoutConfig.invalidateHttpSession(true);
+          logoutConfig.deleteCookies("JSESSIONID");
+        });
     return http.build();
   }
 
