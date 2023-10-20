@@ -1,7 +1,7 @@
 package cl.duoc.newrentacar.web.security;
 
 import cl.duoc.newrentacar.web.apiclients.AuthbootAuthRequest;
-import cl.duoc.newrentacar.web.apiclients.AuthbootClient;
+import cl.duoc.newrentacar.web.services.AuthbootService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -12,13 +12,14 @@ import java.util.ArrayList;
 
 @RequiredArgsConstructor
 public class JwtAuthenticationProvider implements AuthenticationProvider {
-  private final AuthbootClient loginApiClient;
+  private final AuthbootService authbootService;
+
   @Override
   public Authentication authenticate(Authentication authentication) throws AuthenticationException {
     var username = authentication.getName();
     var password = authentication.getCredentials().toString();
     var request = AuthbootAuthRequest.builder().username(username).password(password).build();
-    var login = loginApiClient.auth(request);
+    var login = authbootService.auth(request);
     return new UsernamePasswordAuthenticationToken(username, password, new ArrayList<>());
   }
 
