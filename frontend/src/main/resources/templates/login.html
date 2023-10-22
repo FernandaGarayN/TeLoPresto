@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de inicio de sesión con Bootstrap</title>
-    <!-- Agrega los enlaces para cargar Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link th:href="@{/css/estilo.css}" rel="stylesheet" />
-</head>
+<head th:replace="fragments/head :: head_tag('Inicio de sesión')"><title>INICIO SESION</title></head>
 <body>
     <div class="container my-5">
         <div class="row justify-content-center">

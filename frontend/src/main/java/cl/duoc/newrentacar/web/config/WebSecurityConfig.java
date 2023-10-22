@@ -19,19 +19,34 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
   private final AuthbootService authbootService;
+
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    var permitAll =
+        new String[] {
+          "/",
+          "/index",
+          "/error",
+          "/servicios",
+          "/busqueda-vehiculos",
+          "/requisitos",
+          "/rrss",
+          "/vehiculos/**",
+          "/contacto",
+          "/css/**",
+          "/js/**",
+          "/img/**",
+          "/webjars/**"
+        };
     http.authorizeHttpRequests(
             requests ->
-                requests.requestMatchers("/", "/index", "/logout", "/css/**", "/js/**", "/img/**", "/webjars/**")
-                        .permitAll().anyRequest().authenticated())
-        .formLogin((form) -> form.loginPage("/login").permitAll())
-        .logout(logoutConfig -> {
-          logoutConfig.logoutUrl("/logout");
-          logoutConfig.logoutSuccessUrl("/index");
-          logoutConfig.invalidateHttpSession(true);
-          logoutConfig.deleteCookies("JSESSIONID");
-        });
+                requests.requestMatchers(permitAll).permitAll().anyRequest().authenticated())
+        .formLogin(form -> form.loginPage("/login").permitAll())
+        .logout(
+            logout -> {
+              logout.logoutUrl("/logout").permitAll();
+              logout.logoutSuccessUrl("/");
+            });
     return http.build();
   }
 
@@ -43,7 +58,7 @@ public class WebSecurityConfig {
   @Bean
   public AuthenticationManager authManager(HttpSecurity http) throws Exception {
     return http.getSharedObject(AuthenticationManagerBuilder.class)
-            .authenticationProvider(authenticationProvider())
-            .build();
+        .authenticationProvider(authenticationProvider())
+        .build();
   }
 }

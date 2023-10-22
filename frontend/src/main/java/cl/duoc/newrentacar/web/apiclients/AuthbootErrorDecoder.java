@@ -12,7 +12,7 @@ public class AuthbootErrorDecoder implements ErrorDecoder {
 
   @Override
   public Exception decode(String methodKey, feign.Response response) {
-    log.error(String.format("Error to call method [%s]. [Status=%d] | [Body=%s]", methodKey, response.status(), response.body()));
+    log.error(String.format("Error to call method [%s]: [Status=%d] | [Body=%s]", methodKey, response.status(), response.body()));
     return switch (response.status()) {
       case 400 -> new AuthenticationServiceException("Error al autenticar.");
       case 401 -> new BadCredentialsException("Usuario o contraseña inválidos.");
