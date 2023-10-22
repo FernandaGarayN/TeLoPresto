@@ -1,6 +1,6 @@
-package cl.duoc.newrentacar.web.config.feign;
+package cl.duoc.telopresto.web.config.feign;
 
-import cl.duoc.newrentacar.web.apiclients.AuthbootErrorDecoder;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootErrorDecoder;
 import feign.codec.ErrorDecoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

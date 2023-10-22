@@ -1,4 +1,4 @@
-package cl.duoc.newrentacar.web.apiclients;
+package cl.duoc.telopresto.web.apiclients.authboot;
 
 import feign.codec.ErrorDecoder;
 import lombok.extern.slf4j.Slf4j;

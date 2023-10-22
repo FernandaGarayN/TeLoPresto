@@ -1,7 +1,7 @@
-package cl.duoc.newrentacar.web.config;
+package cl.duoc.telopresto.web.config;
 
-import cl.duoc.newrentacar.web.apiclients.AuthbootClient;
-import cl.duoc.newrentacar.web.services.AuthbootService;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootClient;
+import cl.duoc.telopresto.web.services.AuthbootService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

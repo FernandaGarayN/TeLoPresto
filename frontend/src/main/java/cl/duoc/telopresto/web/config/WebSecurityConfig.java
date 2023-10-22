@@ -1,7 +1,7 @@
-package cl.duoc.newrentacar.web.config;
+package cl.duoc.telopresto.web.config;
 
-import cl.duoc.newrentacar.web.security.JwtAuthenticationProvider;
-import cl.duoc.newrentacar.web.services.AuthbootService;
+import cl.duoc.telopresto.web.security.JwtAuthenticationProvider;
+import cl.duoc.telopresto.web.services.AuthbootService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -46,7 +46,8 @@ public class WebSecurityConfig {
             logout -> {
               logout.logoutUrl("/logout").permitAll();
               logout.logoutSuccessUrl("/");
-            });
+            })
+        .csrf(AbstractHttpConfigurer::disable);
     return http.build();
   }
 

@@ -1,6 +1,6 @@
-package cl.duoc.newrentacar.web.apiclients;
+package cl.duoc.telopresto.web.apiclients.authboot;
 
-import cl.duoc.newrentacar.web.config.feign.FeignAuthbootConfig;
+import cl.duoc.telopresto.web.config.feign.FeignAuthbootConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package cl.duoc.newrentacar.web.apiclients;
+package cl.duoc.telopresto.web.apiclients.authboot;
 
 import java.time.LocalDateTime;
 import java.util.Map;

@@ -1,9 +1,10 @@
-package cl.duoc.newrentacar.web.security;
+package cl.duoc.telopresto.web.security;
 
-import cl.duoc.newrentacar.web.apiclients.AuthbootAuthRequest;
-import cl.duoc.newrentacar.web.apiclients.AuthbootAuthUser;
-import cl.duoc.newrentacar.web.services.AuthbootService;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthRequest;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthUser;
+import cl.duoc.telopresto.web.services.AuthbootService;
 import java.util.Collection;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

@@ -1,10 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>NAVBAR</title>
 </head>
 <body>
-
+<nav th:fragment="navbar(liActive)" class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Rent a Car</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"
+                    th:classappend="${#strings.equalsIgnoreCase('index', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/index}">Inicio <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item"
+                    th:classappend="${#strings.equalsIgnoreCase('servicios', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/servicios}">Servicios</a>
+                </li>
+                <li class="nav-item"
+                    th:classappend="${#strings.equalsIgnoreCase('vehiculos', liActive) ? 'active' : ''}">
+                    <a th:if="${#strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</a>
+                    <span th:if="${not #strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</span>
+                </li>
+                <li class="nav-item" sec:authorize="!isAuthenticated()"
+                    th:classappend="${#strings.equalsIgnoreCase('contacto', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_MANAGE_CAR_R')"
+                    th:classappend="${#strings.equalsIgnoreCase('mantenedor-vehiculos', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/mantenedor-vehiculos}">Mantenedor de vehiculos</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('RESERVATION_PAYMENT_R')"
+                    th:classappend="${#strings.equalsIgnoreCase('pagos', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/pagos}">Pagos</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('RESERVATION_R')"
+                    th:classappend="${#strings.equalsIgnoreCase('reservas', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/reservas}">Reservas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/login}" sec:authorize="!isAuthenticated()">Inicia Sesión</a>
+                    <span class="nav-link" sec:authorize="isAuthenticated()" sec:authentication="name">username</span>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/logout}">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </body>
 </html>

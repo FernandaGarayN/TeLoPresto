@@ -1,8 +1,8 @@
-package cl.duoc.newrentacar.web.services;
+package cl.duoc.telopresto.web.services;
 
-import cl.duoc.newrentacar.web.apiclients.AuthbootAuthRequest;
-import cl.duoc.newrentacar.web.apiclients.AuthbootAuthResponse;
-import cl.duoc.newrentacar.web.apiclients.AuthbootClient;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthRequest;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthResponse;
+import cl.duoc.telopresto.web.apiclients.authboot.AuthbootClient;
 import feign.RetryableException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationServiceException;

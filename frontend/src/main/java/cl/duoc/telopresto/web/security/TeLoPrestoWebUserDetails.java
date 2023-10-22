@@ -1,4 +1,4 @@
-package cl.duoc.newrentacar.web.security;
+package cl.duoc.telopresto.web.security;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,7 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @RequiredArgsConstructor
-public class WebUserDetails implements UserDetails {
+public class TeLoPrestoWebUserDetails implements UserDetails {
 
   private final String username;
   private final String password;
