@@ -1,8 +1,12 @@
 package cl.duoc.newrentacar.api.repository.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "reservation")
@@ -28,4 +32,12 @@ public class ReservationEntity {
             nullable = false
     )
     private ClientEntity client;
+
+    @Builder.Default
+    @OneToMany(
+            mappedBy = "reservation",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
+    private Set<CommentEntity> comments = new HashSet<>();
 }

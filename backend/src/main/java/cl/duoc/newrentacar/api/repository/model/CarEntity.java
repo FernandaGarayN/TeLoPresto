@@ -22,8 +22,6 @@ public class CarEntity {
     private String brand;
     @Column(nullable = false, length = 30)
     private String model;
-    @Column(nullable = false, length = 30)
-    private String subsidiary;
     @Column(nullable = false, length = 10)
     private String color;
     @Column(name = "factory_year", nullable = false, length = 4)
@@ -41,4 +39,12 @@ public class CarEntity {
             orphanRemoval = true,
             cascade = CascadeType.ALL)
     private Set<ReservationEntity> reservations = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(
+            name = "subsidiary_id",
+            updatable = false,
+            nullable = false
+    )
+    private SubsidiaryEntity subsidiary;
 }

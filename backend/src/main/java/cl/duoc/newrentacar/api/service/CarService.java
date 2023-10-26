@@ -49,7 +49,7 @@ public class CarService {
     car.setPlateCode(dbCar.getPlateCode());
     car.setBrand(dbCar.getBrand());
     car.setModel(dbCar.getModel());
-    car.setSubsidiary(dbCar.getSubsidiary());
+    //car.setSubsidiary(String.valueOf(dbCar.getSubsidiary()));
     car.setColor(dbCar.getColor());
     car.setYear(dbCar.getYear());
     car.setCapacity(dbCar.getCapacity());
@@ -67,7 +67,7 @@ public class CarService {
     CarEntity newCar = new CarEntity();
     newCar.setBrand(aCar.getBrand());
     newCar.setModel(aCar.getModel());
-    newCar.setSubsidiary(aCar.getSubsidiary());
+    //newCar.setSubsidiary(aCar.getSubsidiary());
     newCar.setColor(aCar.getColor());
     newCar.setPlateCode(aCar.getPlateCode());
     newCar.setType(aCar.getType());
@@ -90,7 +90,7 @@ public class CarService {
   public List<Car> search(
       String brand, String model, String color, Integer year, String subsidiary, Integer price) {
     List<CarEntity> found =
-        carRepository.findByBrandOrModelOrColorOrYearOrSubsidiaryOrDailyCost(
+        carRepository.findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCost(
             brand, model, color, year, subsidiary, price);
     List<Car> finalCars = new ArrayList<>();
     for (CarEntity entity : found) {
