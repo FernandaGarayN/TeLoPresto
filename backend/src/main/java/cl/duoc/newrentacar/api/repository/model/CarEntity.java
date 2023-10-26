@@ -18,6 +18,8 @@ public class CarEntity {
     private String brand;
     @Column(nullable = false, length = 30)
     private String model;
+    @Column(nullable = false, length = 30)
+    private String subsidiary;
     @Column(nullable = false, length = 10)
     private String color;
     @Column(name = "factory_year", nullable = false, length = 4)

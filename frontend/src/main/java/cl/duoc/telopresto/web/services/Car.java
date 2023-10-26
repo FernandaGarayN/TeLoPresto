@@ -1,4 +1,4 @@
-package cl.duoc.newrentacar.api.endpoint.model;
+package cl.duoc.telopresto.web.services;
 
 
 import lombok.Getter;

@@ -4,6 +4,7 @@ CREATE TABLE cars
     plate_code   VARCHAR(6)                           NOT NULL,
     brand        VARCHAR(30)                          NOT NULL,
     model        VARCHAR(30)                          NOT NULL,
+    subsidiary   VARCHAR(30)                          NOT NULL,
     color        VARCHAR(10)                          NOT NULL,
     factory_year INT                                  NOT NULL,
     capacity     INT                                  NOT NULL,

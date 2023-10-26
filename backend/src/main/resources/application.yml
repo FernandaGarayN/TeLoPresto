@@ -14,3 +14,7 @@ spring:
   sql:
     init:
       mode: always
+server:
+  port: 8091
+  servlet:
+    context-path: /api

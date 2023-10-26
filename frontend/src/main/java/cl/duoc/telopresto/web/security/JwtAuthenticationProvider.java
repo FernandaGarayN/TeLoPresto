@@ -2,9 +2,10 @@ package cl.duoc.telopresto.web.security;
 
 import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthRequest;
 import cl.duoc.telopresto.web.apiclients.authboot.AuthbootAuthUser;
-import cl.duoc.telopresto.web.services.AuthbootService;
+
 import java.util.Collection;
 
+import cl.duoc.telopresto.web.services.AuthbootService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

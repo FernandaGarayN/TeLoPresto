@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head :: head_tag('Búsqueda de Vehículos')}"><title>VEHICULOS</title></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
+
+<div class="container">
+    <h2 class="mb-4">Búsqueda de Vehículos</h2>
+    <form th:object="${carSearchForm}" th:action="@{/busqueda-vehiculos}" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="marca">Marca:</label>
+                <input th:field="*{brand}" type="text" class="form-control" id="marca" placeholder="Ej. Toyota">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="modelo">Modelo:</label>
+                <input th:field="*{model}" type="text" class="form-control" id="modelo" placeholder="Ej. Corolla">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="anio">Año:</label>
+                <select th:field="*{year}" class="form-control" id="anio">
+                    <option value="" selected>Elegir...</option>
+                    <option value="">2023</option>
+                    <option value="">2022</option>
+                    <option value="">2021</option>
+                    <!-- ... -->
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ubicacion">Ubicación (Sucursal):</label>
+                <select th:field="*{subsidiary}" class="form-control" id="ubicacion">
+                    <option value="" selected>Elegir...</option>
+                    <option value="">Sucursal 1</option>
+                    <option value="">Sucursal 2</option>
+                    <option value="">Sucursal 3</option>
+                    <!-- ... -->
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fechaInicio">Fecha de inicio:</label>
+                    <input type="date" class="form-control" id="fechaInicio">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="fechaFin">Fecha de fin:</label>
+                    <input type="date" class="form-control" id="fechaFin">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="tarifa">Tarifa (max. por día):</label>
+            <input type="number" class="form-control" id="tarifa" placeholder="Ej. 50">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+    <div th:if="${results != null}" id="cars_cards" class="row">
+        <h2 class="mb-4">Vehículos Encontrados</h2>
+        <table id="cars_table" class="table table-striped">
+            <thead>
+            <tr>
+                <th style="width: 120px;">MARCA</th>
+                <th style="width: 120px;">MODELO</th>
+                <th style="width: 120px;">PATENTE</th>
+                <th style="width: 120px;">TIPO VEHICULO</th>
+                <th style="width: 120px;">CAPACIDAD</th>
+                <th style="width: 120px;">COLOR</th>
+                <th style="width: 120px;">AÑO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${results}">
+                <td>[[${row.brand}}]]</td>
+                <td>[[${row.model}}]]</td>
+                <td>[[${row.plateCode}}]]</td>
+                <td>[[${row.type}}]]</td>
+                <td>[[${row.capacity}}]]</td>
+                <td>[[${row.color}}]]</td>
+                <td>[[${row.year}}]]</td>
+                <td>[[${row.subsidiary}}]]</td>
+                <td>[[${row.cost}}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

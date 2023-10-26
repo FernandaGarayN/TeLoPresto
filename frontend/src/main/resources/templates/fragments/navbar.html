@@ -15,18 +15,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"
-                    th:classappend="${#strings.equalsIgnoreCase('index', liActive) ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/index}">Inicio <span class="sr-only"></span></a>
+                <li class="nav-item" th:classappend="${#strings.equalsIgnoreCase('index', liActive) ? 'active' : ''}">
+                    <a th:if="${not #strings.equalsIgnoreCase('index', liActive)}"  class="nav-link" th:href="@{/index}">Inicio<span class="sr-only"></span></a>
+                    <span th:if="${#strings.equalsIgnoreCase('index', liActive)}" class="nav-link" th:href="@{/index}">Inicio</span>
                 </li>
-                <li class="nav-item"
-                    th:classappend="${#strings.equalsIgnoreCase('servicios', liActive) ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/servicios}">Servicios</a>
+                <li class="nav-item" th:classappend="${#strings.equalsIgnoreCase('servicios', liActive) ? 'active' : ''}">
+                    <a th:if="${#strings.equalsIgnoreCase('servicios', liActive)}" class="nav-link" th:href="@{/servicios}">Servicios</a>
+                    <span th:if="${#strings.equalsIgnoreCase('servicios', liActive)}" class="nav-link" th:href="@{/servicios}">Servicios</span>
                 </li>
-                <li class="nav-item"
-                    th:classappend="${#strings.equalsIgnoreCase('vehiculos', liActive) ? 'active' : ''}">
-                    <a th:if="${#strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</a>
-                    <span th:if="${not #strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</span>
+                <li class="nav-item" th:classappend="${#strings.equalsIgnoreCase('vehiculos', liActive) ? 'active' : ''}">
+                    <a th:if="${not #strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</a>
+                    <span th:if="${#strings.equalsIgnoreCase('vehiculos', liActive)}" class="nav-link" th:href="@{/vehiculos}">Vehiculos</span>
                 </li>
                 <li class="nav-item" sec:authorize="!isAuthenticated()"
                     th:classappend="${#strings.equalsIgnoreCase('contacto', liActive) ? 'active' : ''}">
