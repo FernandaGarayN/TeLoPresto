@@ -61,31 +61,33 @@
 
         <button type="submit" class="btn btn-primary">Buscar</button>
     </form>
-    <div th:if="${results != null}" id="cars_cards" class="row">
+    <div th:if="${results != null}" id="cars_cards">
         <h2 class="mb-4">Vehículos Encontrados</h2>
         <table id="cars_table" class="table table-striped">
             <thead>
             <tr>
-                <th style="width: 120px;">MARCA</th>
-                <th style="width: 120px;">MODELO</th>
-                <th style="width: 120px;">PATENTE</th>
-                <th style="width: 120px;">TIPO VEHICULO</th>
-                <th style="width: 120px;">CAPACIDAD</th>
-                <th style="width: 120px;">COLOR</th>
-                <th style="width: 120px;">AÑO</th>
+                <th style="width: 120px;">Marca</th>
+                <th style="width: 120px;">Modelo</th>
+                <th style="width: 120px;">Patente</th>
+                <th style="width: 120px;">Tipo</th>
+                <th style="width: 120px;">Capacidad</th>
+                <th style="width: 120px;">Color</th>
+                <th style="width: 120px;">Año</th>
+                <th style="width: 120px;">Sucursal</th>
+                <th style="width: 120px;">Costo</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="row : ${results}">
-                <td>[[${row.brand}}]]</td>
-                <td>[[${row.model}}]]</td>
-                <td>[[${row.plateCode}}]]</td>
-                <td>[[${row.type}}]]</td>
-                <td>[[${row.capacity}}]]</td>
-                <td>[[${row.color}}]]</td>
-                <td>[[${row.year}}]]</td>
-                <td>[[${row.subsidiary}}]]</td>
-                <td>[[${row.cost}}]]</td>
+                <td>[[${row.brand}]]</td>
+                <td>[[${row.model}]]</td>
+                <td>[[${row.plateCode}]]</td>
+                <td>[[${row.type}]]</td>
+                <td>[[${row.capacity}]]</td>
+                <td>[[${row.color}]]</td>
+                <td>[[${row.year}]]</td>
+                <td>[[${row.subsidiary}]]</td>
+                <td>[[${row.cost}]]</td>
             </tr>
             </tbody>
         </table>

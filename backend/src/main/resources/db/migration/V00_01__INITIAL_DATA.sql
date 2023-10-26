@@ -13,11 +13,11 @@ VALUES ('BBCC00', 'Chevrolet', 'Sail', 1, 'Black', '2018', '5', '70000', 'Sedan'
        ('RTXT63', 'Nissan', 'Pathfinder',1, 'Grey', '2018', '7', '60000', 'SUV'),
        ('RTXT62', 'Chevrolet', 'V34', 3, 'Blue', '2023', '4', '30000', 'SUV');
 
-INSERT INTO client (rut, first_name, last_name, email, phone_number, address, gift_points)
+INSERT INTO client (username, rut, first_name, last_name, email, phone_number, address, gift_points)
 VALUES
-    ('1234567890', 'Juan', 'Pérez', 'juan@example.com', 226251693, 'Calle Principal 123', 100),
-    ('9876543210', 'María', 'González', 'maria@example.com', 226216418, 'Avenida Central 456', 50),
-    ('5555555555', 'Pedro', 'Sánchez', 'pedro@example.com', 225342263, 'Calle Secundaria 789', 75);
+    ('jperez', '1234567890', 'Juan', 'Pérez', 'juan@example.com', 226251693, 'Calle Principal 123', 100),
+    ('mgonzalez', '9876543210', 'María', 'González', 'maria@example.com', 226216418, 'Avenida Central 456', 50),
+    ('psanchez','5555555555', 'Pedro', 'Sánchez', 'pedro@example.com', 225342263, 'Calle Secundaria 789', 75);
 
 -- Reservas para Juan Pérez
 INSERT INTO reservation (client_id, car_id)

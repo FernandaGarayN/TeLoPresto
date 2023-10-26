@@ -1,12 +1,11 @@
 package cl.duoc.newrentacar.api.repository.model;
 
 import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "client")
@@ -16,6 +15,10 @@ public class ClientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(nullable = false, length = 30, name = "username")
+    private String username;
+    @Column(nullable = false, length = 10, name = "rut")
+    private String rut;
     @Column(nullable = false, length = 50, name = "first_name")
     private String firstName;
     @Column(nullable = false, length = 50, name = "last_name")
