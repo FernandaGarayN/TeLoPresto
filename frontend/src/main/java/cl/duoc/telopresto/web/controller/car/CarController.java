@@ -20,11 +20,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CarController {
     private final CarService carService;
-
     private final SubsidiaryService subsidiaryService;
     private List<Integer> listOfYear;
     private List<String> listOfBrands;
-
     private List<String> listOfSubsidiaries;
 
     @PostConstruct
