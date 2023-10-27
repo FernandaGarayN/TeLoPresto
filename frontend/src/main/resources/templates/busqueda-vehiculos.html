@@ -81,7 +81,7 @@
                 <td>[[${row.model}]]</td>
                 <td>[[${row.type}]]</td>
                 <td>[[${row.year}]]</td>
-                <td><a th:href="@{/detalle-vehiculo/${row.id}}">Ver +</a></td>
+                <td><a th:href="@{/detalle-vehiculo(idVehiculo=${row.id})}">Ver +</a></td>
             </tr>
             </tbody>
         </table>

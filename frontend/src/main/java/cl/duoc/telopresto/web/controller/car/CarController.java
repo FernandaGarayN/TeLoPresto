@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -35,5 +36,11 @@ public class CarController {
         return "busqueda-vehiculos";
     }
 
+    @GetMapping("/detalle-vehiculo")
+    public String getDetalleVehiculo(ModelMap model, @RequestParam("idVehiculo") Integer idVehiculo){
+        Car car = carService.findById(idVehiculo);
+        model.addAttribute("car",car);
+        return "detalle-vehiculo";
+    }
 
 }
