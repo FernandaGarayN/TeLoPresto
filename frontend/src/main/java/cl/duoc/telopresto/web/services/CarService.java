@@ -24,6 +24,6 @@ public class CarService {
   }
 
   public Car findById(Integer id){
-    return carClient.findById(id);
+    return carClient.findById(id).getCar();
   }
 }
