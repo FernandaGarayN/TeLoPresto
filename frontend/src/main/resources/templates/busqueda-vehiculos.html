@@ -27,7 +27,7 @@
                 <label for="anio">Año:</label>
                 <select th:field="*{year}" class="form-control" id="anio">
                     <option value="">Elija un año...</option>
-                        <option th:each="year : ${listOfYears}" th:value="${year}" th:text="${year}"></option>
+                    <option th:each="year : ${listOfYears}" th:value="${year}" th:text="${year}"></option>
                     <!-- ... -->
                 </select>
             </div>
@@ -38,7 +38,8 @@
                 <label for="ubicacion">Ubicación (Sucursal):</label>
                 <select th:field="*{subsidiary}" class="form-control" id="ubicacion">
                     <option value="">Elija una Sucursal...</option>
-                    <option th:each="subsidiary : ${listOfSubsidiaries}" th:value="${subsidiary}" th:text="${subsidiary}"></option>
+                    <option th:each="subsidiary : ${listOfSubsidiaries}" th:value="${subsidiary}"
+                            th:text="${subsidiary}"></option>
                     <!-- ... -->
                     <!-- ... -->
                 </select>
@@ -73,7 +74,7 @@
                 <th>Modelo</th>
                 <th>Tipo</th>
                 <th>Año</th>
-                <th> </th>
+                <th></th>
             </tr>
             </thead>
             <tbody>

@@ -2,9 +2,11 @@ package cl.duoc.telopresto.web.config;
 
 import cl.duoc.telopresto.web.apiclients.authboot.AuthbootClient;
 import cl.duoc.telopresto.web.apiclients.car.CarClient;
+import cl.duoc.telopresto.web.apiclients.reservation.ReservationClient;
 import cl.duoc.telopresto.web.apiclients.subsidiary.SubsidiaryClient;
 import cl.duoc.telopresto.web.services.AuthbootService;
 import cl.duoc.telopresto.web.services.CarService;
+import cl.duoc.telopresto.web.services.ReservationService;
 import cl.duoc.telopresto.web.services.SubsidiaryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -16,6 +18,7 @@ public class ServiceConfig {
   private final AuthbootClient authbootClient;
   private final CarClient carClient;
   private final SubsidiaryClient subsidiaryClient;
+  private final ReservationClient reservationClient;
 
   @Bean
   public AuthbootService authbootService() {
@@ -30,5 +33,10 @@ public class ServiceConfig {
   @Bean
   SubsidiaryService subsidiaryService(){
     return new SubsidiaryService(subsidiaryClient);
+  }
+
+  @Bean
+  ReservationService reservationService(){
+    return new ReservationService(reservationClient);
   }
 }

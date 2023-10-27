@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag('Mis Reservas')}"><title>INDEX</title></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
+<div th:if="${results != null}" id="reservation_cards" class="bg-white p-2">
+    <h2 class="mb-4">Mis Reservas</h2>
+    <table id="reservations_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
+        <thead>
+        <tr>
+            <th>Fecha Inicio</th>
+            <th>Fecha de Termino</th>
+            <th>Vehiculo</th>
+            <th>Precio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${results}">
+            <td>[[${row.startAt}]]</td>
+            <td>[[${row.endAt}]]</td>
+            <td>[[${row.car.brand}]]-[[${row.car.model}]]</td>
+            <td>[[${row.car.cost}]]</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>
