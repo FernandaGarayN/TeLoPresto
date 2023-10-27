@@ -4,14 +4,14 @@ VALUES  ('San Miguel', 'Gran Avenida José Miguel Carrera 5345', 223456789),
         ('San Bernardo', 'Gran Avenida José Miguel Carrera 14180', 223456790);
 
 
-INSERT INTO cars (plate_code, brand, model, subsidiary_id, color, factory_year, capacity, daily_cost, type )
-VALUES ('BBCC00', 'Chevrolet', 'Sail', 1, 'Black', '2018', '5', '70000', 'Sedan'),
-       ('ZZYY99', 'Chevrolet', 'Sail', 1, 'White', '2020', '5', '70000','Sedan'),
-       ('YYZZ00', 'Hyundai', 'Elantra', 2, 'Blue', '2012', '5', '50000', 'Sedan'),
-       ('RTXT65', 'Chery', 'Tiggo3', 1, 'Grey', '2022', '5', '90000', 'SUV'),
-       ('RTXT64', 'Lego', 'Praia', 1, 'Red', '2012', '2', '100000', 'SUV'),
-       ('RTXT63', 'Nissan', 'Pathfinder',1, 'Grey', '2018', '7', '60000', 'SUV'),
-       ('RTXT62', 'Chevrolet', 'V34', 3, 'Blue', '2023', '4', '30000', 'SUV');
+INSERT INTO cars (plate_code, brand, model, subsidiary_id, color, factory_year, capacity, daily_cost, type, image)
+VALUES ('ABCD01', 'Chevrolet', 'Sail', 1, 'Black', '2018', '5', '70000', 'Sedan', '/autos/chevroletnegro.jpg'),
+       ('XYZW23', 'Chevrolet', 'Sail', 1, 'White', '2020', '5', '70000','Sedan', '/autos/chevroletblanco.jpg'),
+       ('EFGH45', 'Hyundai', 'Elantra', 2, 'Blue', '2012', '5', '50000', 'Sedan', '/autos/HyundaiAzul.jpg'),
+       ('IJKL67', 'Chery', 'Tiggo3', 1, 'Grey', '2022', '5', '90000', 'SUV', '/autos/Cherygris.jpg'),
+       ('MNOP89', 'Mazda', 'CX-5', 1, 'Red', '2021', '2', '600000', 'SUV', '/autos/mazdarojo.jpg'),
+       ('QRST10', 'Nissan', 'Pathfinder',1, 'Grey', '2018', '7', '60000', 'SUV', '/autos/Nissangris.jpg'),
+       ('UVWX12', 'Chevrolet', 'V34', 3, 'Blue', '2023', '4', '30000', 'SUV', '/autos/Chevroletazul.jpg');
 
 INSERT INTO client (username, rut, first_name, last_name, email, phone_number, address, gift_points)
 VALUES
