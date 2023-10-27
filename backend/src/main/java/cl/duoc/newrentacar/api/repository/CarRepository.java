@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends CrudRepository<CarEntity, Integer> {
-  List<CarEntity> findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCost(
+  List<CarEntity> findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCostLessThanEqual(
           String brand, String model, String color, Integer year, String subsidiary, Integer dailyCost);
 }

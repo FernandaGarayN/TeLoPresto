@@ -5,8 +5,10 @@
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 
 <div class="container">
-    <h2 class="mb-4">Búsqueda de Vehículos</h2>
-    <form th:object="${carSearchForm}" th:action="@{/busqueda-vehiculos}" method="post">
+    <div class="p-2 bg-white">
+        <h2 class="mb-4">Búsqueda de Vehículos</h2>
+    </div>
+    <form th:object="${carSearchForm}" th:action="@{/busqueda-vehiculos}" method="post" class="p-2 bg-white">
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="marca">Marca:</label>
@@ -61,33 +63,25 @@
 
         <button type="submit" class="btn btn-primary">Buscar</button>
     </form>
-    <div th:if="${results != null}" id="cars_cards">
+    <div th:if="${results != null}" id="cars_cards" class="bg-white p-2">
         <h2 class="mb-4">Vehículos Encontrados</h2>
-        <table id="cars_table" class="table table-striped">
+        <table id="cars_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
             <thead>
             <tr>
-                <th style="width: 120px;">Marca</th>
-                <th style="width: 120px;">Modelo</th>
-                <th style="width: 120px;">Patente</th>
-                <th style="width: 120px;">Tipo</th>
-                <th style="width: 120px;">Capacidad</th>
-                <th style="width: 120px;">Color</th>
-                <th style="width: 120px;">Año</th>
-                <th style="width: 120px;">Sucursal</th>
-                <th style="width: 120px;">Costo</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Tipo</th>
+                <th>Año</th>
+                <th> </th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="row : ${results}">
                 <td>[[${row.brand}]]</td>
                 <td>[[${row.model}]]</td>
-                <td>[[${row.plateCode}]]</td>
                 <td>[[${row.type}]]</td>
-                <td>[[${row.capacity}]]</td>
-                <td>[[${row.color}]]</td>
                 <td>[[${row.year}]]</td>
-                <td>[[${row.subsidiary}]]</td>
-                <td>[[${row.cost}]]</td>
+                <td><a th:href="@{/detalle-vehiculo/${row.id}}">Ver +</a></td>
             </tr>
             </tbody>
         </table>
