@@ -19,6 +19,7 @@ public class CarController {
     private final CarService carService;
     @GetMapping("/busqueda-vehiculos")
     public String getBusquedaVehiculos(ModelMap model){
+        model.addAttribute("listOfYears",carService.getListOfYears());
         model.addAttribute("carSearchForm", CarSearchForm.builder().build());
         return "busqueda-vehiculos";
     }

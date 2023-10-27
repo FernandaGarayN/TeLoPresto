@@ -9,6 +9,10 @@ import lombok.RequiredArgsConstructor;
 public class CarService {
   private final CarClient carClient;
 
+
+ public List<Integer> getListOfYears(){
+   return null;
+ }
   public List<Car> searchCars(CarSearchForm carSearchForm) {
     return carClient.searchCars(
         carSearchForm.getBrand(),
