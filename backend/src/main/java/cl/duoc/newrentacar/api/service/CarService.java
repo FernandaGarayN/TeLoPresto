@@ -55,6 +55,7 @@ public class CarService {
     car.setCapacity(dbCar.getCapacity());
     car.setCost(dbCar.getDailyCost());
     car.setType(dbCar.getType());
+    car.setImage(dbCar.getImage());
     return car;
   }
 

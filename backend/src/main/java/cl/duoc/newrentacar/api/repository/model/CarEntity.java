@@ -32,6 +32,8 @@ public class CarEntity {
     private Integer dailyCost;
     @Column(nullable = false, length = 30)
     private String type;
+    @Column(nullable = false, length = 50, name = "image")
+    private String image;
     @Builder.Default
     @OneToMany(
             mappedBy = "car",

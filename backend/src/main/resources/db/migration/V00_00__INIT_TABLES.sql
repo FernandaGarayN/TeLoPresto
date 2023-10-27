@@ -19,6 +19,7 @@ CREATE TABLE cars
     capacity        INT                                  NOT NULL,
     daily_cost      INT                                  NOT NULL,
     type            VARCHAR(30)                          NOT NULL,
+    image           VARCHAR(50)                          NOT NULL,
     CONSTRAINT pk_cars PRIMARY KEY (id),
     CONSTRAINT fk_cars_subsidiary FOREIGN KEY (subsidiary_id) REFERENCES subsidiary (id)
 );
