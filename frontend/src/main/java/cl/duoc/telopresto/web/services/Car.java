@@ -16,4 +16,5 @@ public class Car {
   private Integer capacity;
   private Integer cost;
   private String type;
+  private String image;
 }
