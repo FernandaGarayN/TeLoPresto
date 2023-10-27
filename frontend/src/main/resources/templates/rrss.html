@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag('Vehículos')}">
+    <title>VEHICULOS</title>
+</head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
+<!-- Contenido principal de la página -->
+<div class="container content-container">
+    <!-- Tu contenido principal aquí -->
+    <h1>Bienvenido a Vehículos</h1>
+    <p>Explora nuestros vehículos y servicios.</p>
+
+    <!-- Enlaces a redes sociales y correo con imágenes -->
+    <div class="social-links">
+        <a href="https://twitter.com/TeloPrestoRAC" target="_blank">
+            <img src="ruta_de_tu_imagen_twitter.jpg" alt="Twitter">
+            <br>
+        </a>
+        <a href="https://www.instagram.com/TeloPrestoRAC" target="_blank">
+            <img src="ruta_de_tu_imagen_instagram.jpg" alt="Instagram">
+            <br>
+        </a>
+        <a href="mailto:teloprestorentacar@gmail.com">
+            <img src="ruta_de_tu_imagen_correo.jpg" alt="Correo Gmail">
+        </a>
+    </div>
+</div>
+<footer class="container bg-white p-5">
+    <h4>&copy; Información adicional</h4>
+    <ul>
+        <li><a th:href="@{/requisitos}">Requisitos para arrendar</a></li>
+        <li><a th:href="@{/contacto}">Contacto</a></li>
+        <li><a th:href="@{/rrss}">Redes Sociales</a></li>
+    </ul>
+</footer>
+</body>
+</html>
