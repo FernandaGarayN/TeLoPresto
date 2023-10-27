@@ -25,4 +25,10 @@ public interface CarClient {
 
   @GetMapping("/{id}")
   Car findById(@PathVariable Integer id);
+
+  @GetMapping("/years")
+  List<Integer> getListOfYears();
+
+  @GetMapping("/brands")
+  List<String> getListOfBrands();
 }

@@ -12,7 +12,11 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="marca">Marca:</label>
-                <input th:field="*{brand}" type="text" class="form-control" id="marca" placeholder="Ej. Toyota">
+                <select th:field="*{brand}" class="form-control" id="marca">
+                    <option value="">Elija una Marca...</option>
+                    <option th:each="brand : ${listOfBrands}" th:value="${brand}" th:text="${brand}"></option>
+                    <!-- ... -->
+                </select>
             </div>
             <div class="form-group col-md-3">
                 <label for="modelo">Modelo:</label>
@@ -22,10 +26,8 @@
             <div class="form-group col-md-6">
                 <label for="anio">Año:</label>
                 <select th:field="*{year}" class="form-control" id="anio">
-                    <option value="" selected>Elegir...</option>
-                    <option value="">2023</option>
-                    <option value="">2022</option>
-                    <option value="">2021</option>
+                    <option value="">Elija un año...</option>
+                        <option th:each="year : ${listOfYears}" th:value="${year}" th:text="${year}"></option>
                     <!-- ... -->
                 </select>
             </div>
@@ -35,10 +37,9 @@
             <div class="form-group col-md-6">
                 <label for="ubicacion">Ubicación (Sucursal):</label>
                 <select th:field="*{subsidiary}" class="form-control" id="ubicacion">
-                    <option value="" selected>Elegir...</option>
-                    <option value="">Sucursal 1</option>
-                    <option value="">Sucursal 2</option>
-                    <option value="">Sucursal 3</option>
+                    <option value="">Elija una Sucursal...</option>
+                    <option th:each="subsidiary : ${listOfSubsidiaries}" th:value="${subsidiary}" th:text="${subsidiary}"></option>
+                    <!-- ... -->
                     <!-- ... -->
                 </select>
             </div>
