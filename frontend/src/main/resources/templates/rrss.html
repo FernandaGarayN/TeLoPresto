@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
-<head th:replace="~{fragments/head :: head_tag('Vehículos')}">
-    <title>VEHICULOS</title>
+<head th:replace="~{fragments/head :: head_tag('Redes Sociales')}">
+    <title>Redes Sociales</title>
 </head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 <!-- Contenido principal de la página -->
 <div class="container content-container">
     <!-- Tu contenido principal aquí -->
-    <h1>Bienvenido a Vehículos</h1>
-    <p>Explora nuestros vehículos y servicios.</p>
+    <h1>Encuéntranos en Redes Sociales!</h1>
+    <p>Y entérate de todas nuestras novedades en vehículos y servicios.</p>
 
     <!-- Enlaces a redes sociales y correo con imágenes -->
     <div class="social-links">
         <a href="https://twitter.com/TeloPrestoRAC" target="_blank">
-            <img src="ruta_de_tu_imagen_twitter.jpg" alt="Twitter">
-            <br>
+            <img th:src="@{/img/tw.jpg}" alt="Twitter" width="100" height="100">
         </a>
         <a href="https://www.instagram.com/TeloPrestoRAC" target="_blank">
-            <img src="ruta_de_tu_imagen_instagram.jpg" alt="Instagram">
-            <br>
+            <img th:src="@{/img/ig.jpg}" alt="Instagram" width="100" height="100">
         </a>
         <a href="mailto:teloprestorentacar@gmail.com">
-            <img src="ruta_de_tu_imagen_correo.jpg" alt="Correo Gmail">
+            <img th:src="@{/img/gmail.jpg}" alt="Correo Gmail" width="100" height="100">
         </a>
     </div>
 </div>
+<br>
 <footer class="container bg-white p-5">
     <h4>&copy; Información adicional</h4>
     <ul>

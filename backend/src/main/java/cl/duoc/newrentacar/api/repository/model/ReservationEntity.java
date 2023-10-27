@@ -40,4 +40,12 @@ public class ReservationEntity {
             orphanRemoval = true,
             cascade = CascadeType.ALL)
     private Set<CommentEntity> comments = new HashSet<>();
+
+    @Builder.Default
+    @OneToMany(
+            mappedBy = "reservation",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
+    private Set<PaymentEntity> payments = new HashSet<>();
 }
