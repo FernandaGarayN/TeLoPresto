@@ -2,6 +2,8 @@ package cl.duoc.newrentacar.api.endpoint;
 
 import cl.duoc.newrentacar.api.endpoint.model.Car;
 import cl.duoc.newrentacar.api.service.CarService;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,8 @@ public class CarController {
     return ResponseEntity.ok(response);
   }
 
+
+
   @GetMapping("/cars/searching")
   public ResponseEntity<List<Car>> searching(
       @RequestParam(value = "brand", required = false) String brand,
@@ -28,6 +32,18 @@ public class CarController {
       @RequestParam(value = "subsidiary", required = false) String subsidiary,
       @RequestParam(value = "price", required = false) Integer price) {
     return ResponseEntity.ok(carService.search(brand, model, color, year, subsidiary, price));
+  }
+
+  @GetMapping("/cars/brands")
+  public ResponseEntity<List<String>> getBrands() {
+    List<Car> cars = carService.getAllCars();
+    List<String> brands = new ArrayList<>();
+    for(Car car: cars){
+      if (!brands.contains(car.getBrand())){
+        brands.add(car.getBrand());
+      }
+    }
+    return ResponseEntity.ok(brands);
   }
 
   @GetMapping("/cars/{id}")
