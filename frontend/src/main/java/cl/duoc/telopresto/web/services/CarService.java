@@ -22,4 +22,8 @@ public class CarService {
         carSearchForm.getSubsidiary(),
         carSearchForm.getPrice());
   }
+
+  public Car findById(Integer id){
+    return carClient.findById(id);
+  }
 }

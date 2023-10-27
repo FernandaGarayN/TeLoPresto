@@ -36,7 +36,8 @@ public class WebSecurityConfig {
           "/css/**",
           "/js/**",
           "/img/**",
-          "/webjars/**"
+          "/webjars/**",
+          "/detalle-vehiculo"
         };
     http.authorizeHttpRequests(
             requests ->
