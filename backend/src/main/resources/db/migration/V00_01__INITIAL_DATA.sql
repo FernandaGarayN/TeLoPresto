@@ -16,7 +16,7 @@ VALUES ('ABCD01', 'Chevrolet', 'Sail', 1, 'Black', '2018', '5', '70000', 'Sedan'
 INSERT INTO client (username, rut, first_name, last_name, email, phone_number, address, gift_points)
 VALUES
     ('rulloa', '151913318', 'Rodrigo', 'Ulloa', 'rulload@telopresto.cl', 226251693, 'Calle Principal 123', 100),
-    ('mgonzalez', '9876543210', 'María', 'González', 'maria@example.com', 226216418, 'Avenida Central 456', 50),
+    ('fgaray', '167967051', 'Fernanda', 'Garay', 'fgaray@telopresto.cl', 226216418, 'Avenida Central 456', 50),
     ('psanchez','5555555555', 'Pedro', 'Sánchez', 'pedro@example.com', 225342263, 'Calle Secundaria 789', 75);
 
 -- Reservas para Juan Pérez

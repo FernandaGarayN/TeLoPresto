@@ -41,7 +41,7 @@
                 </li>
                 <li class="nav-item" sec:authorize="hasRole('RESERVATION_R')"
                     th:classappend="${#strings.equalsIgnoreCase('reservas', liActive) ? 'active' : ''}">
-                    <a class="nav-link" th:href="@{/reservas}">Reservas</a>
+                    <a class="nav-link" th:href="@{/mis-reservas}">Mis Reservas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/login}" sec:authorize="!isAuthenticated()">Inicia Sesión</a>
