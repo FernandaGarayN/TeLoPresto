@@ -21,7 +21,17 @@ public class CarController {
     return ResponseEntity.ok(response);
   }
 
-
+  @GetMapping("/cars/years")
+  public ResponseEntity<List<Integer>> getYears() {
+    List<Car> cars = carService.getAllCars();
+    List<Integer> years = new ArrayList<>();
+    for (Car car: cars){
+      if (!years.contains(car.getYear())){
+        years.add(car.getYear());
+      }
+    }
+    return ResponseEntity.ok(years);
+  }
 
   @GetMapping("/cars/searching")
   public ResponseEntity<List<Car>> searching(
