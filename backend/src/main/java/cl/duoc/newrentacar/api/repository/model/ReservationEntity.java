@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,6 +17,12 @@ public class ReservationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(nullable = false, name = "start_at")
+    private LocalDate startAt;
+
+    @Column(nullable = false, name = "end_at")
+    private LocalDate endAt;
 
     @ManyToOne
     @JoinColumn(
