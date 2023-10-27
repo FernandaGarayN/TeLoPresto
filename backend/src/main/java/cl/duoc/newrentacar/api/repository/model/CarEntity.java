@@ -1,8 +1,12 @@
 package cl.duoc.newrentacar.api.repository.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "cars")
@@ -18,8 +22,6 @@ public class CarEntity {
     private String brand;
     @Column(nullable = false, length = 30)
     private String model;
-    @Column(nullable = false, length = 30)
-    private String subsidiary;
     @Column(nullable = false, length = 10)
     private String color;
     @Column(name = "factory_year", nullable = false, length = 4)
@@ -30,4 +32,19 @@ public class CarEntity {
     private Integer dailyCost;
     @Column(nullable = false, length = 30)
     private String type;
+    @Builder.Default
+    @OneToMany(
+            mappedBy = "car",
+            fetch = FetchType.LAZY,
+            orphanRemoval = true,
+            cascade = CascadeType.ALL)
+    private Set<ReservationEntity> reservations = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(
+            name = "subsidiary_id",
+            updatable = false,
+            nullable = false
+    )
+    private SubsidiaryEntity subsidiary;
 }
