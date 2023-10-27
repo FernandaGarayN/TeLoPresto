@@ -20,22 +20,22 @@ VALUES
     ('psanchez','5555555555', 'Pedro', 'Sánchez', 'pedro@example.com', 225342263, 'Calle Secundaria 789', 75);
 
 -- Reservas para Juan Pérez
-INSERT INTO reservation (client_id, car_id)
+INSERT INTO reservation (client_id, car_id, start_at, end_at)
 VALUES
-    (1, 1), -- Asigna el car_id adecuado
-    (1, 2); -- Asigna el car_id adecuado
+    (1, 1, '2023-01-15', '2023-01-31'), -- Asigna el car_id adecuado
+    (1, 2, '2023-02-15', '2023-02-28'); -- Asigna el car_id adecuado
 
 -- Reservas para María González
-INSERT INTO reservation (client_id, car_id)
+INSERT INTO reservation (client_id, car_id, start_at, end_at)
 VALUES
-    (2, 3), -- Asigna el car_id adecuado
-    (2, 4); -- Asigna el car_id adecuado
+    (2, 3,'2023-03-15', '2023-03-20'), -- Asigna el car_id adecuado
+    (2, 4,'2023-02-10', '2023-02-15'); -- Asigna el car_id adecuado
 
 -- Reservas para Pedro Sánchez
-INSERT INTO reservation (client_id, car_id)
+INSERT INTO reservation (client_id, car_id, start_at, end_at)
 VALUES
-    (3, 5), -- Asigna el car_id adecuado
-    (3, 6); -- Asigna el car_id adecuado;
+    (3, 5,'2023-01-02', '2023-01-15'), -- Asigna el car_id adecuado
+    (3, 6,'2023-04-15', '2023-04-25'); -- Asigna el car_id adecuado;
 
 -- Empleados para Sucursal 1
 INSERT INTO employee (subsidiary_id, first_name, last_name, position, hire_date)

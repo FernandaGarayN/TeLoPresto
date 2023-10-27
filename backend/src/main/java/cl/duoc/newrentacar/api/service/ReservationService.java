@@ -22,6 +22,7 @@ public class ReservationService {
         for (ReservationEntity entity : reservationsByUserName) {
             reservations.add(getReservation(entity));
         }
+        return reservations;
     }
 
     private Reservation getReservation(ReservationEntity entity) {
