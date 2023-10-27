@@ -5,15 +5,15 @@
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 <div class="container bg-white">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">[[${car.plateCode}]]</li>
-        <li class="list-group-item">[[${car.brand}]]</li>
-        <li class="list-group-item">[[${car.model}]]</li>
-        <li class="list-group-item">[[${car.subsidiary}]]</li>
-        <li class="list-group-item">[[${car.color}]]</li>
-        <li class="list-group-item">[[${car.year}]]</li>
-        <li class="list-group-item">[[${car.capacity}]]</li>
-        <li class="list-group-item">[[${car.cost}]]</li>
-        <li class="list-group-item">[[${car.type}]]</li>
+        <li class="list-group-item">Placa Patente: [[${car.plateCode}]]</li>
+        <li class="list-group-item">Marca: [[${car.brand}]]</li>
+        <li class="list-group-item">Modelo: [[${car.model}]]</li>
+        <li class="list-group-item">Sucursal: [[${car.subsidiary}]]</li>
+        <li class="list-group-item">Color: [[${car.color}]]</li>
+        <li class="list-group-item">Año: [[${car.year}]]</li>
+        <li class="list-group-item">Capacidad: [[${car.capacity}]] pasajeros</li>
+        <li class="list-group-item">Valor: $[[${car.cost}]]</li>
+        <li class="list-group-item">Tipo Vehículo: [[${car.type}]]</li>
     </ul>
 </div>
 </body>

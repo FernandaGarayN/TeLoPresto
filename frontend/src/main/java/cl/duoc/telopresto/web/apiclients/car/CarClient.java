@@ -24,7 +24,7 @@ public interface CarClient {
       @RequestParam(value = "price", required = false) Integer price);
 
   @GetMapping("/{id}")
-  Car findById(@PathVariable Integer id);
+  GetCarResponse findById(@PathVariable Integer id);
 
   @GetMapping("/years")
   List<Integer> getListOfYears();
