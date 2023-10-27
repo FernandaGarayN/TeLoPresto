@@ -2,6 +2,8 @@ package cl.duoc.newrentacar.api.endpoint;
 
 import cl.duoc.newrentacar.api.endpoint.model.Car;
 import cl.duoc.newrentacar.api.service.CarService;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +19,18 @@ public class CarController {
     GetCarsResponse response = new GetCarsResponse();
     response.setCars(carService.getAllCars());
     return ResponseEntity.ok(response);
+  }
+
+  @GetMapping("/cars/years")
+  public ResponseEntity<List<Integer>> getYears() {
+    List<Car> cars = carService.getAllCars();
+    List<Integer> years = new ArrayList<>();
+    for (Car car: cars){
+      if (!years.contains(car.getYear())){
+        years.add(car.getYear());
+      }
+    }
+    return ResponseEntity.ok(years);
   }
 
   @GetMapping("/cars/searching")
