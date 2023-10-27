@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag('Vehículos')}"><title>VEHICULOS</title></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
+
+<div class="container">
+    <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold">Edad mínima</div>
+                <em>Tu edad mínima debe ser de al menos 21 años.</em>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold">Licencia de conducir válida</div>
+                <em>Debes tener una licencia de conducir nacional o internacional que sea válida y se encuentre en vigencia.</em>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold">Experiencia</div>
+                <em>Debes contar con al menos un año de experiencia conduciendo vehículos similares.</em>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold">Tarjeta de crédito habilitada y con saldo disponible</div>
+                <em>Se requiere una tarjeta de crédito válida a nombre del arrendatario para realizar el pago y como garantía en caso de daños o multas.</em>
+            </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="font-weight-bold">Reserva</div>
+                <em>Es recomendable hacer una reserva anticipada para garantizar la disponibilidad del vehículo que deseas arrendar.</em>
+            </div>
+        </li>
+    </ol>
+</div>
+
+
+
+
+</body>
+</html>
