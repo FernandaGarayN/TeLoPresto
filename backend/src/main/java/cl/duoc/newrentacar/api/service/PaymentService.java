@@ -15,7 +15,9 @@ import java.util.List;
 public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
-    
+
+    @Autowired
+    private ReservationRepository reservationRepository;
     public List<Payment> findByUserName(String userName){
         List<PaymentEntity> paymentsByUserName=paymentRepository.findByReservationClientUsername(userName);
         List<Payment> payments= new ArrayList<>();

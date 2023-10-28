@@ -4,13 +4,12 @@ import cl.duoc.newrentacar.api.endpoint.model.Car;
 import cl.duoc.newrentacar.api.endpoint.model.CarComment;
 import cl.duoc.newrentacar.api.repository.CarRepository;
 import cl.duoc.newrentacar.api.repository.model.CarEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class CarService {
@@ -111,7 +110,7 @@ public class CarService {
 
   public List<Car> search(
     String brand, String model, String color, Integer year, String subsidiary, Integer price) {
-    List<CarEntity> found = carRepository.findCars(brand, model, color, year, subsidiary, price);
+    List<CarEntity> found = carRepository.findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCostLessThanEqual(brand, model, color, year, subsidiary, price);
     List<Car> finalCars = new ArrayList<>();
     for (CarEntity entity : found) {
       finalCars.add(getCar(entity));
