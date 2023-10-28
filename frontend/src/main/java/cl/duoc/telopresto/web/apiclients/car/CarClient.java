@@ -11,7 +11,7 @@ import java.util.List;
 
 @FeignClient(
     name = "car-client",
-    url = "http://localhost:8091/api/cars",
+    url = "${spring.properties.feign.cars}",
     configuration = FeignCarConfig.class)
 public interface CarClient {
   @GetMapping("/searching")

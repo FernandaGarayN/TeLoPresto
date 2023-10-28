@@ -3,3 +3,12 @@ server:
     whitelabel:
       enabled: false
     path: /error
+spring:
+  properties:
+    backend-url: ${BACKEND_URL:http://localhost:8091}
+    feign:
+      cars: ${spring.properties.backend-url}/api/cars
+      payment: ${spring.properties.backend-url}/api/payments
+      reservations: ${spring.properties.backend-url}/api/reservations
+      subsidiaries: ${spring.properties.backend-url}/api/subsidiaries
+

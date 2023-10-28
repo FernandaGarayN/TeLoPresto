@@ -1,15 +1,14 @@
-version: "3.7"
+version: "3.8"
 services:
   backend:
     build: ./backend
     ports:
       - "8091:8091"
-    healthcheck:
-      start_period: 30s
-      test: echo "healthcheck"
     restart: on-failure
   frontend:
     build: ./frontend
     ports:
       - "8080:8080"
     restart: on-failure
+    environment:
+      - BACKEND_URL=http://backend:8091

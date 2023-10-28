@@ -12,7 +12,7 @@ import java.util.List;
 
 @FeignClient(
         name = "reservation-client",
-        url = "http://localhost:8091/api/reservations",
+        url = "${spring.properties.feign.reservations}",
         configuration = FeignReservationConfig.class)
 public interface ReservationClient {
     @GetMapping("/{username}")
