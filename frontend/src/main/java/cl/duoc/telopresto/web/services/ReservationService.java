@@ -11,11 +11,15 @@ public class ReservationService {
     private final ReservationClient reservationClient;
 
     public List<Reservation> findByUsername(String username){
-        return reservationClient.findByUsername(username ,null);
+        List<Reservation> byUsername = reservationClient.findByUsername(username);
+        byUsername.forEach(reservation -> {
+            reservation.calculateTotal();
+        });
+        return byUsername;
     }
 
-    public void save(ReservationForm form, String username) {
-        reservationClient.save(Reservation.builder()
+    public Reservation save(ReservationForm form, String username) {
+        return reservationClient.save(Reservation.builder()
                 .username(username)
                 .car(Car.builder().id(form.getCarId()).build())
                 .startAt(form.getStartAt())

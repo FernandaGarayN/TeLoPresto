@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8091:8091"
+    restart: on-failure
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    environment:
+      - BACKEND_URL=http://backend:8091
+      - AUTH_URL=http://auth:8090
+  auth:
+    image: cfmartinezs/authboot:1.0.0
+    ports:
+      - "8090:8090"
+    restart: on-failure
+

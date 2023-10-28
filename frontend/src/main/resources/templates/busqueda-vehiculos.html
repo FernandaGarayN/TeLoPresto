@@ -3,12 +3,11 @@
 <head th:replace="~{fragments/head :: head_tag('Búsqueda de Vehículos')}"><title>VEHICULOS</title></head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
-
-<div class="container">
-    <div class="p-2 bg-white">
+<div class="container bg-white">
+    <div class="p-2">
         <h2 class="mb-4">Búsqueda de Vehículos</h2>
     </div>
-    <form th:object="${carSearchForm}" th:action="@{/busqueda-vehiculos}" method="post" class="p-2 bg-white">
+    <form th:object="${carSearchForm}" th:action="@{/busqueda-vehiculos}" method="post" class="p-2">
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="marca">Marca:</label>
@@ -42,23 +41,11 @@
                     <!-- ... -->
                 </select>
             </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="fechaInicio">Fecha de inicio:</label>
-                    <input type="date" class="form-control" id="fechaInicio">
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label for="fechaFin">Fecha de fin:</label>
-                    <input type="date" class="form-control" id="fechaFin">
-                </div>
-            </div>
         </div>
 
         <div class="form-group">
             <label for="tarifa">Tarifa (max. por día):</label>
-            <input type="number" class="form-control" id="tarifa" placeholder="Ej. 50">
+            <input th:field="*{price}" type="number" class="form-control" id="tarifa" placeholder="Ej. 50">
         </div>
 
         <button type="submit" class="btn btn-primary">Buscar</button>
@@ -87,5 +74,6 @@
         </table>
     </div>
 </div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>

@@ -11,7 +11,7 @@ import java.util.List;
 
 @FeignClient(
         name = "payment-client",
-        url = "http://localhost:8091/api/payments",
+        url = "${spring.properties.feign.payment}",
         configuration = FeignPaymentConfig.class)
 public interface PaymentClient {
     @GetMapping("/{username}")

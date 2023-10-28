@@ -4,14 +4,8 @@
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 
-<div class="container">
-    <div id="cars_cards" class="row">
-    </div>
-</div>
-
-
-<h1>Nuestros Vehiculos</h1>
-<section class="container">
+<div class="container bg-white">
+    <h1>Nuestros Vehiculos</h1>
     <div class="row">
         <div class="d-sm-flex align-self-sm-stretch col-sm-6 col-md-6 col-lg-4">
             <div class="card m-2">
@@ -41,15 +35,7 @@
 
 
     </div>
-</section>
-<footer>
-    <p>&copy; Información adicional</p>
-    <ul>
-
-        <li><a th:href="@{/requisitos}">Requisitos para arrendar</a></li>
-        <li><a th:href="@{/contacto}">Contacto</a></li>
-        <li><a th:href="@{/rrss}">Redes Sociales</a></li>
-    </ul>
-</footer>
+</div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>

@@ -68,3 +68,12 @@ VALUES
     (2, 'El personal fue amable, pero hubo retrasos en la entrega.', 3);
 
 -- Repite el proceso para las otras reservas.
+
+-- Insert para payments con reservation_id del 1 al 6
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (1, 'Tarjeta de Crédito', 500, '2023-10-26');
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (2, 'Tarjeta de Crédito', 600, '2023-10-27');
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (3, 'Transferencia Bancaria', 700, '2023-10-28');
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (4, 'Efectivo', 800, '2023-10-29');
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (5, 'Tarjeta de Débito', 900, '2023-10-30');
+INSERT INTO payments (reservation_id, type, amount, payment_date) VALUES (6, 'PayPal', 1000, '2023-10-31');
+

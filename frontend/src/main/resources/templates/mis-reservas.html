@@ -3,30 +3,35 @@
 <head th:replace="~{fragments/head :: head_tag('Mis Reservas')}"><title>INDEX</title></head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
-<div class="container">
-    <div class="p-2 bg-white">
+<div class="container bg-white">
+    <div class="p-2">
         <h2 class="mb-4">Mis Reservas</h2>
     </div>
-    <div th:if="${results != null}" id="reservation_cards" class="bg-white p-2">
+    <div th:if="${results != null}" id="reservation_cards" class="p-2">
         <table id="reservations_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
             <thead>
             <tr>
-                <th>Fecha Inicio</th>
-                <th>Fecha de Termino</th>
-                <th>Vehiculo</th>
-                <th>Precio</th>
+                <th>Vehículo</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha de Término</th>
+                <th>Nº Días</th>
+                <th>Valor Diario</th>
+                <th>Total</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="row : ${results}">
+            <tr th:each="row : ${results}" th:classappend="${highlight != null && row.id == highlight ? 'alert alert-success bg-success' : ''}">
+                <td>[[${row.car.brand}]]-[[${row.car.model}]]</td>
                 <td>[[${row.startAt}]]</td>
                 <td>[[${row.endAt}]]</td>
-                <td>[[${row.car.brand}]]-[[${row.car.model}]]</td>
-                <td>[[${row.car.cost}]]</td>
+                <td>[[${row.days}]]</td>
+                <td th:text="${'$' + #numbers.formatDecimal(row.car.cost, 0, 'POINT', 0, 'NONE')}"></td>
+                <td th:text="${'$' + #numbers.formatDecimal(row.amount, 0, 'POINT', 0, 'NONE')}"></td>
             </tr>
             </tbody>
         </table>
     </div>
 </div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>
