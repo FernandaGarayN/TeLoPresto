@@ -19,7 +19,7 @@ public class PaymentService {
   private ReservationRepository reservationRepository;
 
   public List<Payment> findByUserName(String userName) {
-    List<PaymentEntity> paymentsByUserName = paymentRepository.findByClientUsername(userName);
+    List<PaymentEntity> paymentsByUserName = paymentRepository.findByReservation_Client_Username(userName);
     List<Payment> payments = new ArrayList<>();
     for (PaymentEntity entity : paymentsByUserName) {
       payments.add(getPayment(entity));
