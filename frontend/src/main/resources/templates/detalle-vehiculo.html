@@ -8,9 +8,11 @@
     <div class="p-2">
         <h2 class="mb-4">Detalle del Vehículo</h2>
         <div class="row">
-            <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="600" height="400">
+            <div class="col-md-6">
+                <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="600" height="400">
+            </div>
         </div>
-        <div class="row">
+        <div class="row mt-5">
             <div class="col-md-6">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
@@ -123,6 +125,8 @@
                 </div>
             </div>
         </div>
-        <footer th:replace="~{fragments/footer :: footer_tag}"></footer>
+    </div>
+</div>
+<footer th:replace="~{fragments/footer :: footer_tag}"></footer>
 </body>
 </html>
