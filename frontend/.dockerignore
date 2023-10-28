@@ -1,0 +1,8 @@
+# Ignore everything
+/*
+
+# Except
+!src
+!.mvn
+!mvnw*
+!pom.xml
