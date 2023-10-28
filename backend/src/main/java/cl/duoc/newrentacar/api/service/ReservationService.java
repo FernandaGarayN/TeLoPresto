@@ -39,12 +39,17 @@ public class ReservationService {
         car.setPlateCode(dbCar.getPlateCode());
         car.setBrand(dbCar.getBrand());
         car.setModel(dbCar.getModel());
-        //car.setSubsidiary(String.valueOf(dbCar.getSubsidiary()));
+        car.setSubsidiary(dbCar.getSubsidiary().getName());
         car.setColor(dbCar.getColor());
         car.setYear(dbCar.getYear());
         car.setCapacity(dbCar.getCapacity());
         car.setCost(dbCar.getDailyCost());
         car.setType(dbCar.getType());
         return car;
+    }
+
+    public Reservation save(Reservation reservation) {
+        //agregar la logica para almacenar en BD con reservation repository
+        return reservation;
     }
 }

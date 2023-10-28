@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
-<head th:replace="~{fragments/head :: head_tag('Mis Reservas')}"><title>INDEX</title></head>
+<head th:replace="~{fragments/head :: head_tag('Reservas Clientes')}"><title>INDEX</title></head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
 <div class="container">
     <div class="p-2 bg-white">
-        <h2 class="mb-4">Mis Reservas</h2>
+        <h2 class="mb-4">Reservas Clientes</h2>
     </div>
+    <form th:object="${reservationSearchForm}" th:action="@{/reservas-cliente}" method="post" class="p-2 bg-white">
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="rut">Rut:</label>
+                <input th:field="*{rut}" type="text" class="form-control" id="rut" placeholder="Ej. Corolla">
+            </div>
+        </div>
+    </form>
     <div th:if="${results != null}" id="reservation_cards" class="bg-white p-2">
+        <h2 class="mb-4">Mis Reservas</h2>
         <table id="reservations_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
             <thead>
             <tr>

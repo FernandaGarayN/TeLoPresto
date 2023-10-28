@@ -35,13 +35,17 @@
                     th:classappend="${#strings.equalsIgnoreCase('mantenedor-vehiculos', liActive) ? 'active' : ''}">
                     <a class="nav-link" th:href="@{/mantenedor-vehiculos}">Mantenedor de vehiculos</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasRole('RESERVATION_PAYMENT_R')"
+                <li class="nav-item" sec:authorize="hasRole('ROLE_RESERVATION_PAYMENT_R')"
                     th:classappend="${#strings.equalsIgnoreCase('pagos', liActive) ? 'active' : ''}">
                     <a class="nav-link" th:href="@{/pagos}">Pagos</a>
                 </li>
-                <li class="nav-item" sec:authorize="hasRole('RESERVATION_R')"
+                <li class="nav-item" sec:authorize="hasRole('ROLE_RESERVATION_U')"
                     th:classappend="${#strings.equalsIgnoreCase('reservas', liActive) ? 'active' : ''}">
                     <a class="nav-link" th:href="@{/mis-reservas}">Mis Reservas</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ROLE_RESERVATION_E')"
+                    th:classappend="${#strings.equalsIgnoreCase('reservas', liActive) ? 'active' : ''}">
+                    <a class="nav-link" th:href="@{/reservas-clientes}">Reservas Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/login}" sec:authorize="!isAuthenticated()">Inicia Sesión</a>

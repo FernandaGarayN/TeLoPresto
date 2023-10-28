@@ -49,7 +49,7 @@ public class CarService {
     car.setPlateCode(dbCar.getPlateCode());
     car.setBrand(dbCar.getBrand());
     car.setModel(dbCar.getModel());
-    //car.setSubsidiary(String.valueOf(dbCar.getSubsidiary()));
+    car.setSubsidiary(dbCar.getSubsidiary().getName());
     car.setColor(dbCar.getColor());
     car.setYear(dbCar.getYear());
     car.setCapacity(dbCar.getCapacity());

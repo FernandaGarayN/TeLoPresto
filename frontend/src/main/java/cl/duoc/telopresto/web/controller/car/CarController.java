@@ -63,5 +63,4 @@ public class CarController {
         model.addAttribute("car", car);
         return "detalle-vehiculo";
     }
-
 }

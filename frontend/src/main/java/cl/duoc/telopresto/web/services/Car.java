@@ -1,10 +1,12 @@
 package cl.duoc.telopresto.web.services;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Car {
   private int id;
   private String plateCode;

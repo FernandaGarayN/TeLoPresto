@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<html lang="es" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head th:replace="~{fragments/head :: head_tag('Detalle del Vehículo')}"><title>PRINCIPAL</title></head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
@@ -15,7 +16,9 @@
         <li class="list-group-item">Capacidad: [[${car.capacity}]] pasajeros</li>
         <li class="list-group-item">Valor: $[[${car.cost}]]</li>
         <li class="list-group-item">Tipo Vehículo: [[${car.type}]]</li>
-        <li class="list-group-item"><a th:href="@{/nueva-reserva(idVehiculo=${car.id})}">Reservar</a></li>
+        <li class="list-group-item" sec:authorize="hasRole('ROLE_RESERVATION_C')">
+            <a th:href="@{/nueva-reserva(idVehiculo=${car.id})}" class="btn btn-primary">Reservar</a>
+        </li>
     </ul>
 </div>
 </body>

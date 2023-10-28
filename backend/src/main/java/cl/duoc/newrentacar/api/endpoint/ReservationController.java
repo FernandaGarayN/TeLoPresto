@@ -5,9 +5,7 @@ import cl.duoc.newrentacar.api.endpoint.model.Reservation;
 import cl.duoc.newrentacar.api.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +16,12 @@ public class ReservationController {
     private ReservationService reservationService;
     @GetMapping("/reservations/{username}")
     public ResponseEntity<List<Reservation>> getByUsername(@PathVariable("username") String username) {
-        List<Reservation> reservations = reservationService.findByUserName(username);
+        return ResponseEntity.ok(reservationService.findByUserName(username));
+    }
 
-        return ResponseEntity.ok(reservations);
+    @PostMapping("/reservations")
+    public ResponseEntity<Reservation> save(@RequestBody Reservation reservation) {
+        return ResponseEntity.ok(reservationService.save(reservation));
     }
 }
 

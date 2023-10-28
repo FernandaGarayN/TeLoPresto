@@ -4,30 +4,33 @@
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
 
-<div class="container my-5">
-    <h1 class="text-center mb-5">Nueva Reserva</h1>
-    <form>
+<div class="container">
+    <div class="p-2 bg-white">
+        <h2 class="mb-4">Nueva Reserva</h2>
+    </div>
+    <form th:object="${reservationForm}" th:action="@{/nueva-reserva}" method="post" class="p-2 bg-white">
         <div class="mb-3 row">
             <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
             <div class="col-sm-10">
-                <input id="vehiculo" th:value="${car.brand} + ' - ' + ${car.model}" disabled>
+                <input id="vehiculo" class="form-control" th:field="*{car}" readonly>
+                <input type="hidden" th:field="*{carId}">
             </div>
         </div>
         <div class="mb-3 row">
             <label for="fechainicio" class="col-sm-2 col-form-label">Fecha de inicio</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="fechainicio" name="fechainicio" required>
+                <input th:field="*{startAt}" type="date" class="form-control" id="fechainicio" name="fechainicio" required>
             </div>
         </div>
         <div class="mb-3 row">
             <label for="fechafin" class="col-sm-2 col-form-label">Fecha de fin</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="fechafin" name="fechafin" required>
+                <input th:field="*{endAt}" type="date" class="form-control" id="fechafin" name="fechafin" required>
             </div>
         </div>
         <div class="mb-3 row">
             <div class="col-sm-12 text-center">
-                <button id="btncontacto" type="button" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Reservar</button>
             </div>
         </div>
     </form>
