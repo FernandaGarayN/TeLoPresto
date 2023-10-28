@@ -1,6 +1,7 @@
 package cl.duoc.newrentacar.api.repository;
 
 import cl.duoc.newrentacar.api.repository.model.CarEntity;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends CrudRepository<CarEntity, Integer> {
-  
+
   @Query("""
     select c from CarEntity c
     where (c.brand = ?1 or ?1 = '' or ?1 is null)
