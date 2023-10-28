@@ -5,7 +5,7 @@
 <nav th:replace="~{fragments/navbar :: navbar('pagos')}"></nav>
 <div class="container">
     <div class="p-2 bg-white">
-        <h2 class="mb-4">Pagos</h2>
+        <h2 class="mb-4">Pagos Realizados</h2>
     </div>
     <div th:if="${results != null}" id="payment_cards" class="bg-white p-2">
         <table id="payment_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
@@ -23,6 +23,29 @@
                 <td>[[${row.paymentDate}]]</td>
                 <td>[[${row.type}]]</td>
                 <td>[[${row.amount}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="p-2 bg-white">
+        <h2 class="mb-4">Reservas Pendiente de Pagos</h2>
+    </div>
+    <div th:if="${reservations != null}" id="reservation_cards" class="bg-white p-2">
+        <table id="reservation_table" class="table table-striped" th:if="${#lists.size(reservetions) > 0}">
+            <thead>
+            <tr>
+                <th>Fecha Inicio</th>
+                <th>Fecha de Termino</th>
+                <th>Vehiculo</th>
+                <th>Precio</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${reservations}">
+                <td>[[${row.startAt}]]</td>
+                <td>[[${row.endAt}]]</td>
+                <td>[[${row.car.brand}]]-[[${row.car.model}]]</td>
+                <td>[[${row.car.cost}]]</td>
             </tr>
             </tbody>
         </table>

@@ -45,6 +45,7 @@ CREATE TABLE reservation
     car_id    INT                           NOT NULL,
     start_at  DATE                          NOT NULL,
     end_at    DATE                          NOT NULL,
+    status    VARCHAR(30)                   NOT NULL,
     CONSTRAINT pk_reservation PRIMARY KEY (id),
     CONSTRAINT fk_reservation_client FOREIGN KEY (client_id) REFERENCES client (id),
     CONSTRAINT fk_reservation_car FOREIGN KEY (car_id) REFERENCES cars (id)

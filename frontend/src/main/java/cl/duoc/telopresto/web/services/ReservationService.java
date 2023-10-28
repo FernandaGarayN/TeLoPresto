@@ -11,7 +11,7 @@ public class ReservationService {
     private final ReservationClient reservationClient;
 
     public List<Reservation> findByUsername(String username){
-        return reservationClient.findByUsername(username);
+        return reservationClient.findByUsername(username ,null);
     }
 
     public void save(ReservationForm form, String username) {
@@ -21,5 +21,9 @@ public class ReservationService {
                 .startAt(form.getStartAt())
                 .endAt(form.getEndAt())
                 .build());
+    }
+
+    public List<Reservation> findByUsernameAndPending(String username) {
+        return reservationClient.findByUsername(username , "pending" );
     }
 }
