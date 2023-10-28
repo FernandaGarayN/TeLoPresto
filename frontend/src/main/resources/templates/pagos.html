@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag('Pagos')}"><title>PAGOS</title></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('pagos')}"></nav>
+<div class="container">
+    <div class="p-2 bg-white">
+        <h2 class="mb-4">Pagos</h2>
+    </div>
+    <div th:if="${results != null}" id="payment_cards" class="bg-white p-2">
+        <table id="payment_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
+            <thead>
+            <tr>
+                <th>Reserva</th>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Monto</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="row : ${results}">
+                <td>[[${row.reservation}]]</td>
+                <td>[[${row.paymentDate}]]</td>
+                <td>[[${row.type}]]</td>
+                <td>[[${row.amount}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
