@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(
     name = "authboot-client",
-    url = "http://localhost:8090/api",
+    url = "${spring.properties.feign.auth}",
     configuration = FeignAuthbootConfig.class)
 public interface AuthbootClient {
 

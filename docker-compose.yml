@@ -12,3 +12,10 @@ services:
     restart: on-failure
     environment:
       - BACKEND_URL=http://backend:8091
+      - AUTH_URL=http://auth:8090
+  auth:
+    image: cfmartinezs/authboot:1.0.0
+    ports:
+      - "8090:8090"
+    restart: on-failure
+
