@@ -1,13 +1,13 @@
 package cl.duoc.newrentacar.api.endpoint;
 
-import cl.duoc.newrentacar.api.endpoint.model.Car;
 import cl.duoc.newrentacar.api.endpoint.model.Reservation;
+import cl.duoc.newrentacar.api.repository.model.PaymentEntity;
+import cl.duoc.newrentacar.api.service.PaymentService;
 import cl.duoc.newrentacar.api.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -23,5 +23,6 @@ public class ReservationController {
     public ResponseEntity<Reservation> save(@RequestBody Reservation reservation) {
         return ResponseEntity.ok(reservationService.save(reservation));
     }
+
 }
 
