@@ -19,5 +19,5 @@ public interface ReservationClient {
     List<Reservation> findByUsername(@PathVariable("username") String username);
 
     @PostMapping
-    void save(Reservation reservation);
+    Reservation save(Reservation reservation);
 }

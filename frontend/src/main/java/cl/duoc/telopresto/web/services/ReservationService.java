@@ -14,8 +14,8 @@ public class ReservationService {
         return reservationClient.findByUsername(username);
     }
 
-    public void save(ReservationForm form, String username) {
-        reservationClient.save(Reservation.builder()
+    public Reservation save(ReservationForm form, String username) {
+        return reservationClient.save(Reservation.builder()
                 .username(username)
                 .car(Car.builder().id(form.getCarId()).build())
                 .startAt(form.getStartAt())

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,10 +24,14 @@ public class ReservationController {
   private final CarService carService;
 
   @GetMapping("/mis-reservas")
-  public String getReservations(ModelMap model, Authentication authentication) {
+  public String getReservations(
+      ModelMap model,
+      @RequestParam(value = "highlight", required = false) Integer highlight,
+      Authentication authentication) {
     String username = (String) authentication.getPrincipal();
     List<Reservation> reservations = reservationService.findByUsername(username);
     model.addAttribute("results", reservations);
+    model.addAttribute("highlight", highlight);
     return "mis-reservas";
   }
 
@@ -69,7 +74,7 @@ public class ReservationController {
     if (bindingResult.hasErrors()) {
       return "nueva-reserva";
     }
-    reservationService.save(form, username);
-    return "redirect:/mis-reservas";
+    Reservation reservation = reservationService.save(form, username);
+    return String.format("redirect:/mis-reservas?highlight=%d", reservation.getId());
   }
 }

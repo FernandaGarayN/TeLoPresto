@@ -18,7 +18,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="row : ${results}">
+            <tr th:each="row : ${results}" th:classappend="${highlight != null && row.id == highlight ? 'alert alert-success bg-success' : ''}">
                 <td>[[${row.startAt}]]</td>
                 <td>[[${row.endAt}]]</td>
                 <td>[[${row.car.brand}]]-[[${row.car.model}]]</td>
