@@ -42,23 +42,11 @@
                     <!-- ... -->
                 </select>
             </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="fechaInicio">Fecha de inicio:</label>
-                    <input type="date" class="form-control" id="fechaInicio">
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label for="fechaFin">Fecha de fin:</label>
-                    <input type="date" class="form-control" id="fechaFin">
-                </div>
-            </div>
         </div>
 
         <div class="form-group">
             <label for="tarifa">Tarifa (max. por día):</label>
-            <input type="number" class="form-control" id="tarifa" placeholder="Ej. 50">
+            <input th:field="*{price}" type="number" class="form-control" id="tarifa" placeholder="Ej. 50">
         </div>
 
         <button type="submit" class="btn btn-primary">Buscar</button>
