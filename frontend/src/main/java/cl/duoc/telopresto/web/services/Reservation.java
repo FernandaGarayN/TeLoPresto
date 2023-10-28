@@ -15,4 +15,13 @@ public class Reservation {
     private Car car;
     private LocalDate startAt;
     private LocalDate endAt;
+    private long days;
+    private long amount;
+
+    public void calculateTotal() {
+        if (startAt != null && endAt != null) {
+            days = endAt.toEpochDay() - startAt.toEpochDay();
+            amount = car.getCost() * days;
+        }
+    }
 }

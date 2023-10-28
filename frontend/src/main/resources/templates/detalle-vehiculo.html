@@ -5,22 +5,124 @@
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 <div class="container bg-white">
-    <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="600" height="400">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Placa Patente: [[${car.plateCode}]]</li>
-        <li class="list-group-item">Marca: [[${car.brand}]]</li>
-        <li class="list-group-item">Modelo: [[${car.model}]]</li>
-        <li class="list-group-item">Sucursal: [[${car.subsidiary}]]</li>
-        <li class="list-group-item">Color: [[${car.color}]]</li>
-        <li class="list-group-item">Año: [[${car.year}]]</li>
-        <li class="list-group-item">Capacidad: [[${car.capacity}]] pasajeros</li>
-        <li class="list-group-item">Valor: $[[${car.cost}]]</li>
-        <li class="list-group-item">Tipo Vehículo: [[${car.type}]]</li>
-        <li class="list-group-item" sec:authorize="hasRole('ROLE_RESERVATION_C')">
-            <a th:href="@{/nueva-reserva(idVehiculo=${car.id})}" class="btn btn-primary">Reservar</a>
-        </li>
-    </ul>
-</div>
-<footer th:replace="fragments/footer :: footer_tag"></footer>
+    <div class="p-2">
+        <h2 class="mb-4">Detalle del Vehículo</h2>
+        <div class="row">
+            <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="600" height="400">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Placa Patente</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.plateCode}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Marca</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.brand}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Modelo</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.model}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Sucursal</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.subsidiary}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Color</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.color}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Año</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.year}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Capacidad</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.capacity}]] pasajeros</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Valor</strong>
+                            </div>
+                            <div class="col-md-6"
+                                 th:text="${'$' + #numbers.formatDecimal(car.cost, 0, 'POINT', 0, 'NONE') + ' por día'}"></div>
+                        </div>
+
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Tipo</strong>
+                            </div>
+                            <div class="col-md-6">[[${car.type}]]</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <a sec:authorize="hasRole('ROLE_RESERVATION_C')"
+                           th:href="@{/nueva-reserva(idVehiculo=${car.id})}" class="btn btn-primary">Reservar</a>
+                        <a th:href="@{/busqueda-vehiculos}" class="btn btn-secondary">Volver</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Comentarios</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">Comentario</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p class="card-text">Valoración</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li th:each="comment : ${car.comments}" class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">[[${comment.text}]]</p>
+                                    </div>
+                                    <div th:replace="~{fragments/rate-star :: ratingStars(${comment.rate})}"></div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="~{fragments/footer :: footer_tag}"></footer>
 </body>
 </html>
