@@ -59,18 +59,19 @@ public class ReservationService {
   }
 
   public Reservation save(Reservation reservation) {
-    ClientEntity clientEntity = clientRepository.findByUsername(reservation.getUsername()).get();
-    CarEntity carentity = carRepository.findById(reservation.getCar().getId()).get();
+    ClientEntity clientEntity = clientRepository.findByUsername(reservation.getUsername()).orElseThrow();
+    CarEntity carEntity = carRepository.findById(reservation.getCar().getId()).orElseThrow();
 
     ReservationEntity reservationEntity = new ReservationEntity();
 
     reservationEntity.setClient(clientEntity);
     reservationEntity.setStartAt(reservation.getStartAt());
     reservationEntity.setEndAt(reservation.getEndAt());
-    reservationEntity.setCar(carentity);
+    reservationEntity.setCar(carEntity);
 
-    carRepository.save(carentity);
+    reservationEntity = reservationRepository.save(reservationEntity);
 
+    reservation.setId(reservationEntity.getId());
     return reservation;
   }
 }

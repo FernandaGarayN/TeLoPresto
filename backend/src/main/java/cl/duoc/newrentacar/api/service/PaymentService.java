@@ -2,7 +2,9 @@ package cl.duoc.newrentacar.api.service;
 
 import cl.duoc.newrentacar.api.endpoint.model.Payment;
 import cl.duoc.newrentacar.api.repository.PaymentRepository;
+import cl.duoc.newrentacar.api.repository.ReservationRepository;
 import cl.duoc.newrentacar.api.repository.model.PaymentEntity;
+import cl.duoc.newrentacar.api.repository.model.ReservationEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.List;
 public class PaymentService {
   @Autowired
   private PaymentRepository paymentRepository;
+  @Autowired
+  private ReservationRepository reservationRepository;
 
   public List<Payment> findByUserName(String userName) {
     List<PaymentEntity> paymentsByUserName = paymentRepository.findByClientUsername(userName);
@@ -34,7 +38,17 @@ public class PaymentService {
   }
 
   public Payment save(Payment payment) {
-    //agregar la logica para almacenar en BD con reservation repository
+    ReservationEntity reservation = reservationRepository.findById(payment.getReservationId()).orElseThrow();
+
+    PaymentEntity entity = new PaymentEntity();
+    entity.setReservation(reservation);
+    entity.setType(payment.getType());
+    entity.setAmount(payment.getAmount());
+    entity.setPaymentDate(payment.getPaymentDate());
+
+    entity = paymentRepository.save(entity);
+
+    payment.setId(entity.getId());
     return payment;
   }
 }
