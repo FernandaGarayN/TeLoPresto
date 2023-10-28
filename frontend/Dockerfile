@@ -1,19 +1,9 @@
-FROM bellsoft/liberica-runtime-container:jdk-17-musl AS builder
-
+FROM maven:3.8.5-openjdk-17-slim AS builder
 WORKDIR /home/myapp
-
-# Cache maven dependencies
-COPY pom.xml mvnw /home/myapp/original-source/
-COPY .mvn /home/myapp/original-source/.mvn
-
+COPY pom.xml /home/myapp/original-source/
 WORKDIR /home/myapp/original-source
-
-RUN ./mvnw dependency:go-offline -B
-
 ADD . /home/myapp/original-source
-
-RUN ./mvnw clean package -DskipTests
-
+RUN mvn clean package -DskipTests
 
 FROM bellsoft/liberica-runtime-container:jre-17-musl AS deploy
 
