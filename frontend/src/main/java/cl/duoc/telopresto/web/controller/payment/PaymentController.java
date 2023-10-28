@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @RequiredArgsConstructor
 public class PaymentController {
-        private final PaymentService paymentService;
+    private final PaymentService paymentService;
+
     @GetMapping("/pagos")
-    public String getPayments(ModelMap model, Authentication authentication){
+    public String getPayments(ModelMap model, Authentication authentication) {
         String username = (String) authentication.getPrincipal();
         model.addAttribute("results", paymentService.findByUsername(username));
         return "pagos";

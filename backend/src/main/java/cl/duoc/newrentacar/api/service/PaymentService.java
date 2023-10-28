@@ -19,7 +19,7 @@ public class PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
     public List<Payment> findByUserName(String userName){
-        List<PaymentEntity> paymentsByUserName=paymentRepository.findByClientUsername(userName);
+        List<PaymentEntity> paymentsByUserName=paymentRepository.findByReservationClientUsername(userName);
         List<Payment> payments= new ArrayList<>();
         for (PaymentEntity entity : paymentsByUserName) {
             payments.add(getPayment(entity));
@@ -30,8 +30,8 @@ public class PaymentService {
     private Payment getPayment(PaymentEntity entity) {
         Payment payment=new Payment();
         payment.setId(entity.getId());
-        payment.setReservationId(entity.getReservation());
-        payment.setType(getType(entity.getType()));
+        payment.setReservationId(entity.getReservation().getId());
+        payment.setType(entity.getType());
         payment.setAmount(entity.getAmount());
         payment.setPaymentDate(entity.getPaymentDate());
         return payment;
