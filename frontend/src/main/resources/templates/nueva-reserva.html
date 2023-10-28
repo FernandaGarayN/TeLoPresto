@@ -4,11 +4,11 @@
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
 
-<div class="container">
-    <div class="p-2 bg-white">
+<div class="container bg-white">
+    <div class="p-2">
         <h2 class="mb-4">Nueva Reserva</h2>
     </div>
-    <form th:object="${reservationForm}" th:action="@{/nueva-reserva}" method="post" class="p-2 bg-white">
+    <form th:object="${reservationForm}" th:action="@{/nueva-reserva}" method="post" class="p-2">
         <div class="mb-3 row">
             <label for="vehiculo" class="col-sm-2 col-form-label">Vehículo</label>
             <div class="col-sm-10">
@@ -34,20 +34,7 @@
             </div>
         </div>
     </form>
-    <div class="row justify-content-center">
-        <div class="col-md-6 bg-white bg-opacity-50">
-            <footer class="mt-5">
-                <p>&copy; Información adicional</p>
-                <ul>
-
-                    <li><a th:href="@{/requisitos}">Requisitos para arrendar</a></li>
-                    <li><a th:href="@{/contacto}">Contacto</a></li>
-                    <li><a href="/rrss">Redes Sociales</a></li>
-                </ul>
-            </footer>
-        </div>
-    </div>
-
 </div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>

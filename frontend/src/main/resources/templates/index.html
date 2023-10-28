@@ -34,18 +34,9 @@
                 <li> Servicio "Te llevo?"</li>
                 <li> Seguros</li>
             </ol>
-            </p>
         </div>
     </div>
 </div>
-<footer class="container bg-white p-5">
-    <h4>&copy; Información adicional</h4>
-    <ul>
-        <li><a th:href="@{/requisitos}">Requisitos para arrendar</a></li>
-        <li><a th:href="@{/contacto}">Contacto</a></li>
-        <li><a th:href="@{/rrss}">Redes Sociales</a></li>
-    </ul>
-</footer>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
-
 </html>

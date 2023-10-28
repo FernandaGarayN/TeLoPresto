@@ -3,11 +3,11 @@
 <head th:replace="~{fragments/head :: head_tag('Mis Reservas')}"><title>INDEX</title></head>
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('reservas')}"></nav>
-<div class="container">
-    <div class="p-2 bg-white">
+<div class="container bg-white">
+    <div class="p-2">
         <h2 class="mb-4">Mis Reservas</h2>
     </div>
-    <div th:if="${results != null}" id="reservation_cards" class="bg-white p-2">
+    <div th:if="${results != null}" id="reservation_cards" class="p-2">
         <table id="reservations_table" class="table table-striped" th:if="${#lists.size(results) > 0}">
             <thead>
             <tr>
@@ -28,5 +28,6 @@
         </table>
     </div>
 </div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>

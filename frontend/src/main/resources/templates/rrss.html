@@ -4,9 +4,9 @@
     <title>Redes Sociales</title>
 </head>
 <body>
-<nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
+<nav th:replace="~{fragments/navbar :: navbar('rrss')}"></nav>
 <!-- Contenido principal de la página -->
-<div class="container content-container">
+<div class="container bg-white">
     <!-- Tu contenido principal aquí -->
     <h1>Encuéntranos en Redes Sociales!</h1>
     <p>Y entérate de todas nuestras novedades en vehículos y servicios.</p>
@@ -25,13 +25,6 @@
     </div>
 </div>
 <br>
-<footer class="container bg-white p-5">
-    <h4>&copy; Información adicional</h4>
-    <ul>
-        <li><a th:href="@{/requisitos}">Requisitos para arrendar</a></li>
-        <li><a th:href="@{/contacto}">Contacto</a></li>
-        <li><a th:href="@{/rrss}">Redes Sociales</a></li>
-    </ul>
-</footer>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
 </body>
 </html>
