@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends CrudRepository<CarEntity, Integer> {
+
   @Query("""
     select c from CarEntity c
     where (c.brand = ?1 or ?1 = '' or ?1 is null)

@@ -5,7 +5,7 @@
 <body>
 <nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
 <div class="container bg-white">
-    <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="400" height="400">
+    <img th:src="@{'/img/' + ${car.image}}" alt="Foto Vehículo" width="600" height="400">
     <ul class="list-group list-group-flush">
         <li class="list-group-item">Placa Patente: [[${car.plateCode}]]</li>
         <li class="list-group-item">Marca: [[${car.brand}]]</li>

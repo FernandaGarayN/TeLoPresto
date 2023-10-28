@@ -13,19 +13,19 @@ import java.util.List;
 
 @Service
 public class PaymentService {
-  @Autowired
-  private PaymentRepository paymentRepository;
-  @Autowired
-  private ReservationRepository reservationRepository;
+    @Autowired
+    private PaymentRepository paymentRepository;
 
-  public List<Payment> findByUserName(String userName) {
-    List<PaymentEntity> paymentsByUserName = paymentRepository.findByReservation_Client_Username(userName);
-    List<Payment> payments = new ArrayList<>();
-    for (PaymentEntity entity : paymentsByUserName) {
-      payments.add(getPayment(entity));
+    @Autowired
+    private ReservationRepository reservationRepository;
+    public List<Payment> findByUserName(String userName){
+        List<PaymentEntity> paymentsByUserName=paymentRepository.findByReservationClientUsername(userName);
+        List<Payment> payments= new ArrayList<>();
+        for (PaymentEntity entity : paymentsByUserName) {
+            payments.add(getPayment(entity));
+        }
+        return payments;
     }
-    return payments;
-  }
 
   private Payment getPayment(PaymentEntity entity) {
     Payment payment = new Payment();

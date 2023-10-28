@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PaymentRepository extends CrudRepository<PaymentEntity, Integer> {
-  List<PaymentEntity> findByReservation_Client_Username(String username);
+    List<PaymentEntity> findByReservationClientUsername(String userName);
 }
