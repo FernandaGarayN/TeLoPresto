@@ -1,17 +1,21 @@
 package cl.duoc.newrentacar.api.service;
 
 import cl.duoc.newrentacar.api.endpoint.model.Car;
+import cl.duoc.newrentacar.api.endpoint.model.CarComment;
 import cl.duoc.newrentacar.api.repository.CarRepository;
 import cl.duoc.newrentacar.api.repository.model.CarEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CarService {
-  @Autowired private CarRepository carRepository;
+  @Autowired
+  private CarRepository carRepository;
 
   public List<Car> getAllCars() {
     List<Car> finalCars = new ArrayList<>();
@@ -56,6 +60,23 @@ public class CarService {
     car.setCost(dbCar.getDailyCost());
     car.setType(dbCar.getType());
     car.setImage(dbCar.getImage());
+
+    List<CarComment> comments = new ArrayList<>();
+
+    dbCar.getReservations().forEach(reservations ->
+      reservations.getComments().forEach(commentEntity ->
+        comments.add(
+          new CarComment(
+            commentEntity.getId(),
+            commentEntity.getDescription(),
+            commentEntity.getRate()
+          )
+        )
+      )
+    );
+
+    car.setComments(comments);
+
     return car;
   }
 
@@ -89,10 +110,10 @@ public class CarService {
   }
 
   public List<Car> search(
-      String brand, String model, String color, Integer year, String subsidiary, Integer price) {
+    String brand, String model, String color, Integer year, String subsidiary, Integer price) {
     List<CarEntity> found =
-        carRepository.findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCostLessThanEqual(
-            brand, model, color, year, subsidiary, price);
+      carRepository.findByBrandOrModelOrColorOrYearOrSubsidiaryNameOrDailyCostLessThanEqual(
+        brand, model, color, year, subsidiary, price);
     List<Car> finalCars = new ArrayList<>();
     for (CarEntity entity : found) {
       finalCars.add(getCar(entity));

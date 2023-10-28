@@ -4,6 +4,8 @@ package cl.duoc.newrentacar.api.endpoint.model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 public class Car {
@@ -18,4 +20,5 @@ public class Car {
     private Integer cost;
     private String type;
     private String image;
+    private List<CarComment> comments;
 }
