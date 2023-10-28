@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head_tag('Requisitos')}"><title>VEHICULOS</title></head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('requisitos')}"></nav>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Recuperación de Contraseña</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Enviar enlace de recuperación</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
+</body>
+</html>

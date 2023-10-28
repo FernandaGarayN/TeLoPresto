@@ -40,7 +40,8 @@ public class WebSecurityConfig {
           "/detalle-vehiculo",
           "/requisitos",
           "/rrss",
-          "/registro"
+          "/registro",
+          "/recuperar-contrasenia"
         };
     http.authorizeHttpRequests(
             requests ->
