@@ -2,7 +2,6 @@ package cl.duoc.newrentacar.api.endpoint;
 
 
 import cl.duoc.newrentacar.api.endpoint.model.Payment;
-import cl.duoc.newrentacar.api.repository.model.PaymentEntity;
 import cl.duoc.newrentacar.api.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ public class PaymentController {
     }
 
     @PostMapping("/payments")
-    public PaymentEntity<Payment> save(@RequestBody Payment payment) {
-        return PaymentEntity.ok(paymentService.save(payment));
+    public ResponseEntity<Payment> save(@RequestBody Payment payment) {
+        return ResponseEntity.ok(paymentService.save(payment));
     }
 }
