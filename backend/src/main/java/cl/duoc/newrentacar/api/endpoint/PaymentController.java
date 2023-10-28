@@ -2,7 +2,6 @@ package cl.duoc.newrentacar.api.endpoint;
 
 
 import cl.duoc.newrentacar.api.endpoint.model.Payment;
-import cl.duoc.newrentacar.api.repository.model.PaymentEntity;
 import cl.duoc.newrentacar.api.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
