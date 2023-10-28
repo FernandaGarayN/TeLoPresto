@@ -25,8 +25,14 @@ public class ReservationService {
   @Autowired
   CarRepository carRepository;
 
-  public List<Reservation> findByUserName(String userName) {
-    List<ReservationEntity> reservationsByUserName = reservationRepository.findByClientUsername(userName);
+  public List<Reservation> findByUserName(String userName, String status) {
+    List<ReservationEntity> reservationsByUserName;
+    if(status != null){
+      reservationsByUserName = reservationRepository.findByClientUsernameAndStatus(userName, status);
+    } else {
+      reservationsByUserName = reservationRepository.findByClientUsername(userName);
+    }
+
     List<Reservation> reservations = new ArrayList<>();
     for (ReservationEntity entity : reservationsByUserName) {
       reservations.add(getReservation(entity));

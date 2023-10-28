@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ReservationRepository extends CrudRepository<ReservationEntity, Integer> {
-    List<ReservationEntity> findByClientUsername(String userName);
+  List<ReservationEntity> findByClientUsername(String userName);
+
+  List<ReservationEntity> findByClientUsernameAndStatus(String userName, String status);
 }

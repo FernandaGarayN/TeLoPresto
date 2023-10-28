@@ -26,13 +26,13 @@ VALUES
     (1, 2, '2023-02-15', '2023-02-28', 'ok'); -- Asigna el car_id adecuado
 
 -- Reservas para María González
-INSERT INTO reservation (client_id, car_id, start_at, end_at)
+INSERT INTO reservation (client_id, car_id, start_at, end_at, status)
 VALUES
     (2, 3,'2023-03-15', '2023-03-20', 'pending'), -- Asigna el car_id adecuado
     (2, 4,'2023-02-10', '2023-02-15', 'ok'); -- Asigna el car_id adecuado
 
 -- Reservas para Pedro Sánchez
-INSERT INTO reservation (client_id, car_id, start_at, end_at)
+INSERT INTO reservation (client_id, car_id, start_at, end_at, status)
 VALUES
     (3, 5,'2023-01-02', '2023-01-15', 'pending'), -- Asigna el car_id adecuado
     (3, 6,'2023-04-15', '2023-04-25', 'ok'); -- Asigna el car_id adecuado;

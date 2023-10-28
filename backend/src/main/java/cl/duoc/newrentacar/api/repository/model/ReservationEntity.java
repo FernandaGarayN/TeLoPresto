@@ -24,6 +24,9 @@ public class ReservationEntity {
     @Column(nullable = false, name = "end_at")
     private LocalDate endAt;
 
+    @Column(nullable = false, length = 30, name = "status")
+    private String status;
+
     @ManyToOne
     @JoinColumn(
             name = "car_id",

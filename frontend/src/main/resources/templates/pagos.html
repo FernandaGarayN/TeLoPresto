@@ -31,7 +31,7 @@
         <h2 class="mb-4">Reservas Pendiente de Pagos</h2>
     </div>
     <div th:if="${reservations != null}" id="reservation_cards" class="bg-white p-2">
-        <table id="reservation_table" class="table table-striped" th:if="${#lists.size(reservetions) > 0}">
+        <table id="reservation_table" class="table table-striped" th:if="${#lists.size(reservations) > 0}">
             <thead>
             <tr>
                 <th>Fecha Inicio</th>
