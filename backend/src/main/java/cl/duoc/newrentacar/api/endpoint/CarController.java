@@ -5,6 +5,7 @@ import cl.duoc.newrentacar.api.service.CarService;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CarController {
-  @Autowired private CarService carService;
+  @Autowired
+  private CarService carService;
 
   @GetMapping("/cars")
   public ResponseEntity<GetCarsResponse> get() {
@@ -25,8 +27,8 @@ public class CarController {
   public ResponseEntity<List<Integer>> getYears() {
     List<Car> cars = carService.getAllCars();
     List<Integer> years = new ArrayList<>();
-    for (Car car: cars){
-      if (!years.contains(car.getYear())){
+    for (Car car : cars) {
+      if (!years.contains(car.getYear())) {
         years.add(car.getYear());
       }
     }
@@ -35,12 +37,13 @@ public class CarController {
 
   @GetMapping("/cars/searching")
   public ResponseEntity<List<Car>> searching(
-      @RequestParam(value = "brand", required = false) String brand,
-      @RequestParam(value = "model", required = false) String model,
-      @RequestParam(value = "color", required = false) String color,
-      @RequestParam(value = "year", required = false) Integer year,
-      @RequestParam(value = "subsidiary", required = false) String subsidiary,
-      @RequestParam(value = "price", required = false) Integer price) {
+    @RequestParam(value = "brand", required = false) String brand,
+    @RequestParam(value = "model", required = false) String model,
+    @RequestParam(value = "color", required = false) String color,
+    @RequestParam(value = "year", required = false) Integer year,
+    @RequestParam(value = "subsidiary", required = false) String subsidiary,
+    @RequestParam(value = "price", required = false) Integer price
+  ) {
     return ResponseEntity.ok(carService.search(brand, model, color, year, subsidiary, price));
   }
 
@@ -48,8 +51,8 @@ public class CarController {
   public ResponseEntity<List<String>> getBrands() {
     List<Car> cars = carService.getAllCars();
     List<String> brands = new ArrayList<>();
-    for(Car car: cars){
-      if (!brands.contains(car.getBrand())){
+    for (Car car : cars) {
+      if (!brands.contains(car.getBrand())) {
         brands.add(car.getBrand());
       }
     }
