@@ -9,10 +9,10 @@
             <div class="card">
                 <div class="card-body">
                     <h3 class="card-title text-center">Recuperación de Contraseña</h3>
-                    <form>
+                    <form th:object="${passwordRecoveryForm}" th:action="@{/recuperar-contrasenia}" method="post" class="p-2">
                         <div class="form-group">
                             <label for="email">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input th:field="*{email}" type="email" class="form-control" id="email" name="email" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Enviar enlace de recuperación</button>
                     </form>
