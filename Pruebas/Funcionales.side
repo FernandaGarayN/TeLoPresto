@@ -464,6 +464,287 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "9aba4d1e-68ba-4499-98f6-6b473b5686d7",
+    "name": "Reserva",
+    "commands": [{
+      "id": "06b5826c-0862-47d7-a5d8-cab8076b7044",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44867cfb-8c10-4960-abf4-0858f37c9ba0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1312x1090",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3e8347f0-c0fb-487a-918e-5d6f922f35bb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cerrar Sesión",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7c1b531-884d-491c-a1f5-d738bcb44775",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Inicia Sesión",
+      "targets": [
+        ["linkText=Inicia Sesión", "linkText"],
+        ["css=.nav-item:nth-child(5) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Inicia Sesión')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Inicia Sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2702ad2-b116-4c8d-af66-e56547fa7314",
+      "comment": "",
+      "command": "click",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdaef206-74c6-4b35-914e-bae2010e35a5",
+      "comment": "",
+      "command": "type",
+      "target": "id=username",
+      "targets": [
+        ["id=username", "id"],
+        ["name=username", "name"],
+        ["css=#username", "css:finder"],
+        ["xpath=//input[@id='username']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "rulloa"
+    }, {
+      "id": "a63266ea-30b6-4fc5-bce3-8be0bdb2380c",
+      "comment": "",
+      "command": "click",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "033a0208-fb20-4ceb-8065-c2fedb413419",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "rulloa"
+    }, {
+      "id": "4cc0319e-1a55-47c4-b40f-b5b940324be1",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-submit",
+      "targets": [
+        ["id=btn-submit", "id"],
+        ["css=#btn-submit", "css:finder"],
+        ["xpath=//button[@id='btn-submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Iniciar sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9f20465-f939-45b4-b648-e35216487af7",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Vehiculos",
+      "targets": [
+        ["linkText=Vehiculos", "linkText"],
+        ["css=.nav-item:nth-child(3) > .nav-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Vehiculos')]", "xpath:link"],
+        ["xpath=//div[@id='navbarNav']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/vehiculos')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Vehiculos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8bbd1e08-c429-4a52-9c1e-696d11f5ece9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.d-sm-flex:nth-child(1) .card-text",
+      "targets": [
+        ["css=.d-sm-flex:nth-child(1) .card-text", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Encuentra los mejores precios en alquiler de autos familiares para tus próximas vacaciones.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df715e25-951f-4209-94af-c736767b5a23",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Busca tu vehículo",
+      "targets": [
+        ["linkText=Busca tu vehículo", "linkText"],
+        ["css=.btn-warning", "css:finder"],
+        ["xpath=//a[contains(text(),'Busca tu vehículo')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/busqueda-vehiculos')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Busca tu vehículo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0bafe0d-6a2c-4204-a27a-121988b82f57",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d614e75f-1de3-4516-bf8c-6e6502d46fd8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ver +",
+      "targets": [
+        ["linkText=Ver +", "linkText"],
+        ["css=tr:nth-child(1) a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ver +')]", "xpath:link"],
+        ["xpath=//table[@id='cars_table']/tbody/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/detalle-vehiculo?idVehiculo=1')]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ver +')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e11d9cb3-1241-47d8-af8f-0ba469de31e2",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Reservar",
+      "targets": [
+        ["linkText=Reservar", "linkText"],
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//a[contains(text(),'Reservar')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/nueva-reserva?idVehiculo=1')]", "xpath:href"],
+        ["xpath=//li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Reservar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00cccaee-ee02-4086-b930-adb87167edd0",
+      "comment": "",
+      "command": "click",
+      "target": "id=vehiculo",
+      "targets": [
+        ["id=vehiculo", "id"],
+        ["name=car", "name"],
+        ["css=#vehiculo", "css:finder"],
+        ["xpath=//input[@id='vehiculo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa4b55e1-c52d-4d2a-8bf4-5f8d48a0f403",
+      "comment": "",
+      "command": "click",
+      "target": "id=fechainicio",
+      "targets": [
+        ["id=fechainicio", "id"],
+        ["name=startAt", "name"],
+        ["css=#fechainicio", "css:finder"],
+        ["xpath=//input[@id='fechainicio']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9881d995-7672-4c2e-bc44-4a61fd2f5280",
+      "comment": "",
+      "command": "type",
+      "target": "id=fechainicio",
+      "targets": [
+        ["id=fechainicio", "id"],
+        ["name=startAt", "name"],
+        ["css=#fechainicio", "css:finder"],
+        ["xpath=//input[@id='fechainicio']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2023-10-01"
+    }, {
+      "id": "5899932f-0327-4988-8f88-95cc2230641b",
+      "comment": "",
+      "command": "click",
+      "target": "id=fechafin",
+      "targets": [
+        ["id=fechafin", "id"],
+        ["name=endAt", "name"],
+        ["css=#fechafin", "css:finder"],
+        ["xpath=//input[@id='fechafin']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "657bff7a-10b5-444a-a2ca-4769a8c1ee35",
+      "comment": "",
+      "command": "type",
+      "target": "id=fechafin",
+      "targets": [
+        ["id=fechafin", "id"],
+        ["name=endAt", "name"],
+        ["css=#fechafin", "css:finder"],
+        ["xpath=//input[@id='fechafin']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "2023-12-01"
+    }, {
+      "id": "f9377401-2ddb-4781-a95d-cd87a2a4691f",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea03b367-d366-4950-9ac3-8ad6c7daac47",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[4]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Reservar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6317f032-8ffa-43b1-8922-c7267c899162",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert > td:nth-child(1)",
+      "targets": [
+        ["css=.alert > td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='reservations_table']/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//tr[3]/td", "xpath:position"]
+      ],
+      "value": "Cevrolet-Sail"
+    }]
   }],
   "suites": [{
     "id": "0c2c1a8a-51cf-472a-b5e2-4c4d90979d00",
