@@ -1,0 +1,478 @@
+{
+  "id": "f9133f4d-2893-4e3f-a160-5da46f1b5b3a",
+  "version": "2.0",
+  "name": "TeLoPresto",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "248df9b9-f990-469a-b001-1d1110784055",
+    "name": "Buscar auto",
+    "commands": [{
+      "id": "b19c0733-53db-4d83-89ea-82857b746ecc",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf73b42a-1509-4645-98f3-39978f7385cf",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1312x1090",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "21785436-c3c4-4f0f-84b9-b51abd98a6ef",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Reservar ahora",
+      "targets": [
+        ["linkText=Reservar ahora", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Reservar ahora')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/busqueda-vehiculos')]", "xpath:href"],
+        ["xpath=//div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Reservar ahora')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "49e508cb-e662-46e9-a519-fe2091991afb",
+      "comment": "",
+      "command": "select",
+      "target": "id=marca",
+      "targets": [],
+      "value": "label=Hyundai"
+    }, {
+      "id": "7d259a3d-b75e-48eb-bd83-5563d019b304",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "0,-0.390625"
+    }, {
+      "id": "0488f065-c95b-48fb-91c4-da1bb3daa2b9",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "0,-0.390625"
+    }, {
+      "id": "478899e9-bcc3-4af9-bbb0-3ef4ad56f235",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "0,-0.390625"
+    }, {
+      "id": "3bc86457-0ab3-47a0-9465-fba58e874ca6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3695949b-8b76-47e6-9134-c7a49031761e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ver +",
+      "targets": [
+        ["linkText=Ver +", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ver +')]", "xpath:link"],
+        ["xpath=//table[@id='cars_table']/tbody/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/detalle-vehiculo?idVehiculo=3')]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ver +')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2e68138-0b5e-456f-a466-d6f8c3feec36",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/busqueda-vehiculos')]", "xpath:href"],
+        ["xpath=//li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbaa5729-fc70-44bb-8853-bb28bf6a84a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef060782-5a93-495d-bd1b-acd1ae95a01f",
+      "comment": "",
+      "command": "select",
+      "target": "id=marca",
+      "targets": [],
+      "value": "label=Mazda"
+    }, {
+      "id": "4a67f4c9-f610-4729-9180-60da86b0eedf",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "f3d55365-1e4d-4ee1-b489-9563b50548dc",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "35f50909-323a-4232-9a21-931ebf73bc13",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "6e858563-7047-4905-a758-2060349f57b9",
+      "comment": "",
+      "command": "click",
+      "target": "id=modelo",
+      "targets": [
+        ["id=modelo", "id"],
+        ["name=model", "name"],
+        ["css=#modelo", "css:finder"],
+        ["xpath=//input[@id='modelo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "882ade3c-f6f8-4732-a94c-4a888463d34c",
+      "comment": "",
+      "command": "type",
+      "target": "id=modelo",
+      "targets": [
+        ["id=modelo", "id"],
+        ["name=model", "name"],
+        ["css=#modelo", "css:finder"],
+        ["xpath=//input[@id='modelo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "CX-5"
+    }, {
+      "id": "c0117b58-6b89-4f7b-9e02-7ed798e2a5e6",
+      "comment": "",
+      "command": "select",
+      "target": "id=anio",
+      "targets": [],
+      "value": "label=2021"
+    }, {
+      "id": "5b301e62-46aa-43e9-a6e1-b8e6187d654f",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "067f2e04-5c6a-432d-9264-28eb9dcb35d8",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "5feac1fa-a4a0-4405-b458-89d86fe7a94a",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "229e0b65-de42-4932-b7f3-98a027e2329b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b1d51e1-3007-4ff8-a5c7-f96942fd3229",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ver +",
+      "targets": [
+        ["linkText=Ver +", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ver +')]", "xpath:link"],
+        ["xpath=//table[@id='cars_table']/tbody/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/detalle-vehiculo?idVehiculo=5')]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ver +')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ecd09b66-0552-483e-a96d-fbba3264a1cc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/busqueda-vehiculos')]", "xpath:href"],
+        ["xpath=//li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d30d77e-0e9e-40b2-a6f7-cf2e8a4945e8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4dfeb00d-ad2b-4ae6-88ab-9ee1f0c51e54",
+      "comment": "",
+      "command": "select",
+      "target": "id=marca",
+      "targets": [],
+      "value": "label=Chevrolet"
+    }, {
+      "id": "5a02f830-61e6-4df7-b286-3cb5fe4a419d",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "124eada9-3ecd-4abd-adf4-cb662659f284",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "5b67d808-159b-43e5-bd13-cc5fd0239b81",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=marca",
+      "targets": [
+        ["id=marca", "id"],
+        ["name=brand", "name"],
+        ["css=#marca", "css:finder"],
+        ["xpath=//select[@id='marca']", "xpath:attributes"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "ccebd757-8102-406c-bffc-7360ee783b6c",
+      "comment": "",
+      "command": "click",
+      "target": "id=modelo",
+      "targets": [
+        ["id=modelo", "id"],
+        ["name=model", "name"],
+        ["css=#modelo", "css:finder"],
+        ["xpath=//input[@id='modelo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63e8bb25-eb2e-4960-822a-7d6ef9e8de18",
+      "comment": "",
+      "command": "type",
+      "target": "id=modelo",
+      "targets": [
+        ["id=modelo", "id"],
+        ["name=model", "name"],
+        ["css=#modelo", "css:finder"],
+        ["xpath=//input[@id='modelo']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Sail"
+    }, {
+      "id": "2dde5c80-2523-4e58-ad91-e95813518ab0",
+      "comment": "",
+      "command": "select",
+      "target": "id=anio",
+      "targets": [],
+      "value": "label=2020"
+    }, {
+      "id": "7842a881-761e-460e-8fe3-a4ab64470038",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "9848d8a6-42d5-4e81-8507-44876c970de1",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "08e71300-ddef-42b0-98fc-c3ed7a603c0e",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "id=anio",
+      "targets": [
+        ["id=anio", "id"],
+        ["name=year", "name"],
+        ["css=#anio", "css:finder"],
+        ["xpath=//select[@id='anio']", "xpath:attributes"],
+        ["xpath=//div[3]/select", "xpath:position"]
+      ],
+      "value": "-0.5,-0.390625"
+    }, {
+      "id": "56254c44-4d07-4993-8b82-16e7da3a9766",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Buscar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7f7efe5-83f9-4268-a3ad-b286ca8b26e4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ver +",
+      "targets": [
+        ["linkText=Ver +", "linkText"],
+        ["css=td > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Ver +')]", "xpath:link"],
+        ["xpath=//table[@id='cars_table']/tbody/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/detalle-vehiculo?idVehiculo=2')]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ver +')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa3b568d-1109-43bc-94bc-829873633e54",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Volver",
+      "targets": [
+        ["linkText=Volver", "linkText"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Volver')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/busqueda-vehiculos')]", "xpath:href"],
+        ["xpath=//li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Volver')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0c2c1a8a-51cf-472a-b5e2-4c4d90979d00",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["248df9b9-f990-469a-b001-1d1110784055"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
