@@ -74,6 +74,7 @@ public class ReservationService {
     reservationEntity.setStartAt(reservation.getStartAt());
     reservationEntity.setEndAt(reservation.getEndAt());
     reservationEntity.setCar(carEntity);
+    reservationEntity.setStatus("pending");
 
     reservationEntity = reservationRepository.save(reservationEntity);
 
