@@ -5,6 +5,7 @@ import cl.duoc.telopresto.web.apiclients.car.CarClient;
 import cl.duoc.telopresto.web.apiclients.payment.PaymentClient;
 import cl.duoc.telopresto.web.apiclients.reservation.ReservationClient;
 import cl.duoc.telopresto.web.apiclients.subsidiary.SubsidiaryClient;
+import cl.duoc.telopresto.web.apiclients.user.UserClient;
 import cl.duoc.telopresto.web.services.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @RequiredArgsConstructor
 public class ServiceConfig {
   private final AuthbootClient authbootClient;
+  private final UserClient userClient;
   private final CarClient carClient;
   private final SubsidiaryClient subsidiaryClient;
   private final ReservationClient reservationClient;
@@ -30,16 +32,22 @@ public class ServiceConfig {
   }
 
   @Bean
-  SubsidiaryService subsidiaryService(){
+  SubsidiaryService subsidiaryService() {
     return new SubsidiaryService(subsidiaryClient);
   }
 
   @Bean
-  ReservationService reservationService(){
+  ReservationService reservationService() {
     return new ReservationService(reservationClient);
   }
 
   @Bean
-  PaymentService paymentService() { return new PaymentService(paymentClient);}
+  PaymentService paymentService() {
+    return new PaymentService(paymentClient);
+  }
 
+  @Bean
+  public UserService userService() {
+    return new UserService(userClient);
+  }
 }
