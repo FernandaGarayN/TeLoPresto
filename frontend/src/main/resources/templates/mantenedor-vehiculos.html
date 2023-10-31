@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head :: head_tag('Mantenedor de Vehículos')}">
+    <title>Mantenedor de Vehículos</title>
+</head>
+<body>
+<nav th:replace="~{fragments/navbar :: navbar('vehiculos')}"></nav>
+<div class="container bg-white">
+    <div class="p-2">
+        <h2 class="mb-4">Mantenedor de Vehículos</h2>
+    </div>
+
+    <!-- Crear un nuevo vehículo -->
+    <a th:href="@{/nuevo-vehiculo}" class="btn btn-primary">
+        Nuevo Vehículo
+    </a>
+
+    <!-- Lista de vehículos existentes -->
+    <div id="car-list" class="p-2">
+        <h3>Vehículos en el Sistema</h3>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Placa Patente</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Aquí debes iterar sobre la lista de vehículos y mostrar cada vehículo -->
+            <tr th:each="car : ${carList}">
+                <td th:text="${car.plateCode}"></td>
+                <td th:text="${car.brand}"></td>
+                <td th:text="${car.model}"></td>
+                <td>
+                    <a th:href="@{'/editar-vehiculo/' + ${car.id}}">Editar</a> |
+                    <a th:href="@{'/eliminar-vehiculo/' + ${car.id}}">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer_tag"></footer>
+</body>
+</html>

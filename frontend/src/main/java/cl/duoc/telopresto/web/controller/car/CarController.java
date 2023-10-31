@@ -63,4 +63,20 @@ public class CarController {
         model.addAttribute("car", car);
         return "detalle-vehiculo";
     }
+
+    @GetMapping("/nuevo-vehiculo")
+    public String getNewCar (ModelMap model){
+        model.addAttribute("newCarForm", NewCarForm.builder().build());
+        return "nuevo-vehiculo";
+    }
+
+    @PostMapping("/nuevo-vehiculo")
+    public String postNewCar (ModelMap model, @Valid @ModelAttribute ("newCarForm") NewCarForm newCarForm,
+                              BindingResult bindingResult){
+        model.addAttribute("newCarForm", newCarForm);
+        if (bindingResult.hasErrors()){
+            return "nuevo-vehiculo";
+        }
+        return "mantenedor-vehiculos";
+    }
 }

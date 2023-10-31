@@ -5,6 +5,7 @@ import cl.duoc.telopresto.web.services.Car;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -31,4 +32,7 @@ public interface CarClient {
 
   @GetMapping("/brands")
   List<String> getListOfBrands();
+
+ @PostMapping("")
+  Car save(Car newCar);
 }
